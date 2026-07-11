@@ -1,0 +1,9 @@
+{
+  "name": "ggumiji-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "꾸미지줄눈 (모노텍스디자인) 줄눈시공 원페이지 랜딩",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
