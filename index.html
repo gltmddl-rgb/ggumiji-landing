@@ -14,6 +14,8 @@
   3. 가격표: 전부 예시 금액 → 실제 가격으로 교체
   4. 비포/애프터 사진: 회색 자리표시 → 실제 사진
   5. 후기 3건: 예시 문구 → 실제 후기 (없으면 섹션 삭제)
+  6. 자재 섹션: 폴리우레아 브랜드명 + 자재/컬러샘플 사진 2장
+  7. 시공 사례 갤러리: 부위별 사진 6장 (욕실 바닥/벽, 현관, 주방, 베란다, 거실)
   ═══════════════════════════════════════════════════════════
 -->
 <style>
@@ -98,6 +100,31 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .usp-item h3{font-size:17px;margin-bottom:4px;letter-spacing:-.01em}
 .usp-item p{font-size:14px;color:#b9c9db}
 
+/* ── compare ── */
+.compare{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.compare th{padding:12px 8px;font-size:13.5px}
+.compare th.bad{background:#eef1f5;color:var(--sub)}
+.compare th.good{background:var(--teal);color:#fff}
+.compare td{padding:13px 12px;border-top:1px solid var(--line);vertical-align:top;width:50%}
+.compare td.bad{color:#93a1b0;background:#fafbfc}
+.compare td.good{font-weight:700;color:var(--ink)}
+.compare td.good::before{content:"✓ ";color:var(--teal)}
+.compare td.bad::before{content:"✕ ";color:#c2ccd6}
+
+/* ── materials ── */
+.mat-cards{display:grid;gap:12px}
+.mat-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.mat-card .mimg{aspect-ratio:16/7;background:linear-gradient(135deg,#f2f4f7,#e3e8ee);display:flex;align-items:center;justify-content:center;color:#8a97a5;font-size:13px;text-align:center;line-height:1.5}
+.mat-card .mbody{padding:16px 18px 18px}
+.mat-card h3{font-size:16px;margin-bottom:4px;letter-spacing:-.01em}
+.mat-card p{font-size:13.5px;color:var(--sub)}
+.mat-card .tagrow{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.mat-card .mtag{font-size:11.5px;font-weight:700;color:var(--teal-d);background:var(--teal-bg);padding:3px 9px;border-radius:12px}
+
+/* ── gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.gallery .g{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,#eef1f5,#dde3ea);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#8a97a5;text-align:center;line-height:1.4;border:1px solid var(--line);padding:6px}
+
 /* ── price ── */
 .price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);font-size:15px}
 .price-table th{background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;padding:12px;text-align:left}
@@ -158,6 +185,7 @@ footer b{color:#c2cedb}
   .cards{grid-template-columns:repeat(3,1fr)}
   .cta-col{flex-direction:row}
   .cta-col .btn{flex:1}
+  .mat-cards{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -259,6 +287,51 @@ footer b{color:#c2cedb}
   </div>
 </section>
 
+<!-- COMPARE -->
+<section class="pain">
+  <div class="wrap">
+    <span class="sec-label">한눈에 비교</span>
+    <h2>어디에 맡기느냐가<br>줄눈의 수명을 결정합니다</h2>
+    <p class="sec-sub">같은 "줄눈시공"이라도 과정이 다르면 결과가 다릅니다.</p>
+    <table class="compare">
+      <thead><tr><th class="bad">일반 저가 시공</th><th class="good">꾸미지줄눈</th></tr></thead>
+      <tbody>
+        <tr><td class="bad">초보 직원·하청 투입</td><td class="good">대표가 하루 한 집만 직접 시공</td></tr>
+        <tr><td class="bad">백시멘트 겉면만 긁어냄</td><td class="good">타일 측면까지 깊게 파내는 밑작업</td></tr>
+        <tr><td class="bad">출처 불분명 저가 자재</td><td class="good">친환경 인증 폴리우레아만 사용</td></tr>
+        <tr><td class="bad">시공 후 연락 두절</td><td class="good">무상 A/S로 끝까지 책임</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section>
+  <div class="wrap">
+    <span class="sec-label">사용 자재</span>
+    <h2>어떤 자재를 쓰는지<br>먼저 공개합니다</h2>
+    <p class="sec-sub">자재를 숨기는 업체는 이유가 있습니다. 꾸미지줄눈은 자재부터 투명하게 안내합니다.</p>
+    <div class="mat-cards">
+      <div class="mat-card">
+        <div class="mimg">폴리우레아 자재 사진<br>(업체 원본 교체 예정)</div>
+        <div class="mbody">
+          <h3>친환경 폴리우레아 줄눈재 <span class="dummy-tag">브랜드명 확인 중</span></h3>
+          <p>황변(누렇게 변색)과 수축이 적어 오래가는 프리미엄 줄눈재입니다. 인체에 무해한 친환경 인증 제품만 사용합니다.</p>
+          <div class="tagrow"><span class="mtag">친환경 인증</span><span class="mtag">무수축</span><span class="mtag">황변 방지</span><span class="mtag">락스 청소 가능</span></div>
+        </div>
+      </div>
+      <div class="mat-card">
+        <div class="mimg">컬러 샘플 사진<br>(업체 원본 교체 예정)</div>
+        <div class="mbody">
+          <h3>프리미엄 친환경 안료</h3>
+          <p>타일 색상에 맞춰 선택할 수 있는 다양한 컬러를 보유하고 있습니다. 상담 시 타일 사진을 보내주시면 어울리는 색상을 추천해 드립니다.</p>
+          <div class="tagrow"><span class="mtag">다양한 컬러</span><span class="mtag">무독성</span><span class="mtag">색상 맞춤 추천</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRICE -->
 <section id="price">
   <div class="wrap">
@@ -289,7 +362,7 @@ footer b{color:#c2cedb}
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
     <p class="sec-sub">&nbsp;</p>
-    <div class="step"><div class="step-num">1</div><div><h3>카톡 · 전화 상담</h3><p>아파트명, 평형, 원하시는 부위를 알려주시면 견적을 안내드립니다.</p></div></div>
+    <div class="step"><div class="step-num">1</div><div><h3>카톡 · 전화 상담</h3><p>아파트명, 평형, 원하시는 부위를 알려주세요. 타일 사진만 보내주셔도 방문 없이 견적 안내가 가능합니다.</p></div></div>
     <div class="step"><div class="step-num">2</div><div><h3>시공일 예약</h3><p>입주 전이라면 입주 청소 이후 ~ 이사 전, 거주 중이시라면 편하신 날짜로 잡아드립니다.</p></div></div>
     <div class="step"><div class="step-num">3</div><div><h3>방문 시공 (하루 한 집)</h3><p>백시멘트 제거 밑작업부터 마감까지 대표가 직접 진행합니다.</p></div></div>
     <div class="step"><div class="step-num">4</div><div><h3>검수 · 무상 A/S</h3><p>함께 확인 후 마무리하며, 이후 문제 발생 시 무상으로 보수해 드립니다.</p></div></div>
@@ -302,6 +375,14 @@ footer b{color:#c2cedb}
     <span class="sec-label">시공 사례</span>
     <h2>수도권 신축 단지에서<br>이미 검증됐습니다</h2>
     <p class="sec-sub">우리 단지 이름이 보이시나요? 같은 타일, 같은 구조를 이미 시공해 봤습니다.</p>
+    <div class="gallery">
+      <div class="g">욕실 바닥<br>시공 사진</div>
+      <div class="g">욕실 벽<br>시공 사진</div>
+      <div class="g">현관<br>시공 사진</div>
+      <div class="g">주방<br>시공 사진</div>
+      <div class="g">베란다<br>시공 사진</div>
+      <div class="g">거실 타일<br>시공 사진</div>
+    </div>
     <div class="apt-chips">
       <span class="chip">파주 운정자이시그니처</span>
       <span class="chip">서울숲 아이파크 리버포레</span>
