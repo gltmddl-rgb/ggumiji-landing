@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>꾸미지줄눈 | 서울·수도권 신축 아파트 줄눈시공 전문</title>
-<meta name="description" content="하루 한 집, 대표가 직접 시공하는 프리미엄 줄눈 전문 꾸미지줄눈. 친환경 폴리우레아 자재, 무상 A/S. 서울·수도권 신축 입주 전은 물론 거주 중·구축 아파트까지 줄눈시공 전문.">
+<meta name="description" content="하루 한 집, 본사 시공팀이 직접 시공하는 줄눈 전문 꾸미지줄눈. 친환경 폴리우레아 아스팍톤, 계약금 0원 100% 후불제. 서울·수도권 신축 입주 전은 물론 거주 중·구축 아파트까지 현관+욕실 2곳 25만원부터.">
 <!--
-  ═══════════ [시안 안내 — 업체 확인 후 교체할 항목] ═══════════
-  ✅ 전화번호: 1600-7201 / 010-2047-6738 (명함 반영 완료)
-  ✅ 사업자 정보: 대표 이기환, 본점 인천·파주점 (명함 반영 완료)
+  ═══════════ [남은 교체 항목 — 2026-07-19 업체 자료 반영 후] ═══════════
+  ✅ 전화(상담 010-4710-6616), 실가격표(25/35/45), 실후기 4건, 실사진 14장,
+     자재 실명(아스팍톤), 6단계 절차, 후불제/본사시공/철저한A/S 문구 반영 완료
   1. 사업자등록번호: 000-00-00000 → 실제 번호 (파워링크 심사 필수)
-  2. 오픈카톡 링크: https://open.kakao.com/o/EXAMPLE
-  3. 가격표: 전부 예시 금액 → 실제 가격으로 교체
-  4. 비포/애프터 사진: 회색 자리표시 → 실제 사진
-  5. 후기 3건: 예시 문구 → 실제 후기 (없으면 섹션 삭제)
-  6. 자재 섹션: 폴리우레아 브랜드명 + 자재/컬러샘플 사진 2장
-  7. 시공 사례 갤러리: 부위별 사진 6장 (욕실 바닥/벽, 현관, 주방, 베란다, 거실)
+  2. 오픈카톡 링크: https://open.kakao.com/o/EXAMPLE → 실제 링크
+  ※ 주의: "대표 직접 시공"(본사 여러 팀), "무상 A/S"(무상 아님) 표현 금지 — 업체 요청
   ═══════════════════════════════════════════════════════════
 -->
 <style>
@@ -79,16 +75,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .card h3{font-size:16.5px;margin-bottom:6px;letter-spacing:-.01em}
 .card p{font-size:14px;color:var(--sub)}
 
-/* ── before/after ── */
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.ba{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.ba .ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:13px;color:#8a97a5;text-align:center;line-height:1.5}
-.ba.before .ph{background:repeating-linear-gradient(45deg,#e8e2d8,#e8e2d8 12px,#ddd5c8 12px,#ddd5c8 24px)}
-.ba.after .ph{background:linear-gradient(135deg,#eef7f4,#d8ede6)}
-.ba .cap{font-size:13px;font-weight:700;text-align:center;padding:9px;background:#fff}
+/* ── before/after (3단계: 시공전→밑작업→시공후) ── */
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.ba{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.ba .ph{aspect-ratio:3/4;overflow:hidden}
+.ba .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ba .cap{font-size:11.5px;font-weight:700;text-align:center;padding:8px 4px;background:#fff}
 .ba.before .cap{color:#b0533a}
+.ba.mid .cap{color:#a07a1e}
 .ba.after .cap{color:var(--teal-d)}
 .ba-note{font-size:12.5px;color:var(--sub);text-align:center}
+@media (min-width:640px){.ba .cap{font-size:13px}}
 
 /* ── USP ── */
 .usp{background:var(--navy);color:#fff}
@@ -114,7 +111,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 /* ── materials ── */
 .mat-cards{display:grid;gap:12px}
 .mat-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.mat-card .mimg{aspect-ratio:16/7;background:linear-gradient(135deg,#f2f4f7,#e3e8ee);display:flex;align-items:center;justify-content:center;color:#8a97a5;font-size:13px;text-align:center;line-height:1.5}
+.mat-card .mimg{aspect-ratio:16/9;background:#f4f6f8;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mat-card .mimg img{width:100%;height:100%;object-fit:contain;display:block}
 .mat-card .mbody{padding:16px 18px 18px}
 .mat-card h3{font-size:16px;margin-bottom:4px;letter-spacing:-.01em}
 .mat-card p{font-size:13.5px;color:var(--sub)}
@@ -123,7 +121,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 
 /* ── gallery ── */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
-.gallery .g{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,#eef1f5,#dde3ea);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#8a97a5;text-align:center;line-height:1.4;border:1px solid var(--line);padding:6px}
+.gallery .g{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.gallery .g img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery .g .lb{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(16,28,43,.72));color:#fff;font-size:11.5px;font-weight:700;padding:14px 8px 7px;text-align:center}
 
 /* ── price ── */
 .price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);font-size:15px}
@@ -202,7 +202,7 @@ footer b{color:#c2cedb}
       </svg>
       <span>꾸미지 <span class="divider">|</span> <em>줄눈</em><span class="en">KKUMAGE</span></span>
     </a>
-    <a class="hd-call track-call" href="tel:1600-7201">📞 <span class="nowrap">1600-7201</span></a>
+    <a class="hd-call track-call" href="tel:010-4710-6616">📞 <span class="nowrap">010-4710-6616</span></a>
   </div>
 </header>
 
@@ -210,18 +210,18 @@ footer b{color:#c2cedb}
 <div class="hero">
   <div class="wrap">
     <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
-    <h1 id="heroTitle">아파트 줄눈시공,<br><span class="hl">욕실 2곳 15만원</span>부터<span class="dummy-tag">예시가</span></h1>
-    <p class="hero-price">현관 + 욕실 2곳 + 베란다 패키지 <strong class="nowrap">29만원~</strong><span class="dummy-tag">예시가</span></p>
+    <h1 id="heroTitle">아파트 줄눈시공,<br><span class="hl">현관+욕실 2곳 25만원</span>부터</h1>
+    <p class="hero-price">계약금 없이 시공 확인 후 결제하는 <strong>100% 후불제</strong></p>
     <div class="cta-col">
       <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
-      <a class="btn btn-call track-call" href="tel:1600-7201">📞 전화 상담 <small class="nowrap">1600-7201</small></a>
+      <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 전화 상담 <small class="nowrap">010-4710-6616</small></a>
     </div>
     <p class="hero-note">입주 전이 가장 좋지만, 이미 살고 계신 집·구축 아파트도 동일하게 시공합니다.<br>시공 중에는 전화 연결이 어려울 수 있습니다. 카톡 문의 시 순차적으로 답변드립니다.</p>
     <div class="badges">
       <div class="badge"><span class="ico">🏠</span><span class="tx">하루<br>한 집 시공</span></div>
-      <div class="badge"><span class="ico">👷</span><span class="tx">대표<br>직접 시공</span></div>
-      <div class="badge"><span class="ico">🌿</span><span class="tx">친환경<br>폴리우레아</span></div>
-      <div class="badge"><span class="ico">🛡️</span><span class="tx">무상<br>A/S 보장</span></div>
+      <div class="badge"><span class="ico">👷</span><span class="tx">본사<br>직접 시공</span></div>
+      <div class="badge"><span class="ico">💳</span><span class="tx">계약금 0원<br>100% 후불제</span></div>
+      <div class="badge"><span class="ico">🛡️</span><span class="tx">철저한<br>A/S</span></div>
     </div>
   </div>
 </div>
@@ -247,7 +247,7 @@ footer b{color:#c2cedb}
     <h2>우리 집은 해당될까?<br>이런 집 모두 시공합니다</h2>
     <p class="sec-sub">신축 입주 전이 가장 이상적이지만, 살고 계신 집도 늦지 않았습니다.</p>
     <div class="cards">
-      <div class="card"><span class="ico">🔑</span><h3>신축 입주 전 <span class="dummy-tag" style="color:var(--teal-d);background:var(--teal-bg);border-color:var(--teal)">추천</span></h3><p>가구가 들어오기 전 깨끗한 상태라 결과가 가장 좋습니다. 입주 청소 후 ~ 이사 전이 최적기입니다.</p></div>
+      <div class="card"><span class="ico">🔑</span><h3>신축 입주 전 <span class="dummy-tag" style="color:var(--teal-d);background:var(--teal-bg);border-color:var(--teal)">추천</span></h3><p>가구가 들어오기 전이라 결과가 가장 좋습니다. 백시멘트 가루가 날리는 작업 특성상 입주청소 전(보통 입주 3일 전)이 최적기입니다.</p></div>
       <div class="card"><span class="ico">🛋️</span><h3>이미 거주 중인 집</h3><p>살면서도 시공 가능합니다. 욕실·현관 등 부위별로 나눠 생활에 지장 없이 진행합니다.</p></div>
       <div class="card"><span class="ico">🏢</span><h3>구축 아파트</h3><p>곰팡이·물때로 오염된 기존 줄눈을 깨끗하게 제거한 뒤 새 줄눈으로 재시공합니다.</p></div>
     </div>
@@ -257,16 +257,18 @@ footer b{color:#c2cedb}
 <!-- BEFORE / AFTER -->
 <section>
   <div class="wrap">
-    <span class="sec-label">시공 전후 비교</span>
-    <h2>줄눈 하나로 달라지는 우리 집</h2>
-    <p class="sec-sub">물티슈 한 장으로 슥 닦이는 욕실, 입주 첫날의 화사함이 그대로 유지됩니다.</p>
+    <span class="sec-label">시공 과정 전후 비교</span>
+    <h2>백시멘트를 파내는 밑작업까지,<br>과정을 전부 보여드립니다</h2>
+    <p class="sec-sub">겉면만 덧바르는 시공과의 차이는 가운데 '밑작업' 사진에 있습니다. 실제 시공 현장 사진입니다.</p>
     <div class="ba-grid">
-      <div class="ba before"><div class="ph">시공 전 사진<br>(업체 원본 교체 예정)</div><div class="cap">BEFORE · 오염된 백시멘트</div></div>
-      <div class="ba after"><div class="ph">시공 후 사진<br>(업체 원본 교체 예정)</div><div class="cap">AFTER · 프리미엄 줄눈</div></div>
+      <div class="ba before"><div class="ph"><img src="img/ba-bath-before.jpg" alt="욕실 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
+      <div class="ba mid"><div class="ph"><img src="img/ba-bath-mid.jpg" alt="욕실 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
+      <div class="ba after"><div class="ph"><img src="img/ba-bath-after.jpg" alt="욕실 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
     </div>
     <div class="ba-grid">
-      <div class="ba before"><div class="ph">시공 전 사진<br>(현관)</div><div class="cap">BEFORE · 현관 타일</div></div>
-      <div class="ba after"><div class="ph">시공 후 사진<br>(현관)</div><div class="cap">AFTER · 현관 타일</div></div>
+      <div class="ba before"><div class="ph"><img src="img/ba-entry-before.jpg" alt="현관 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
+      <div class="ba mid"><div class="ph"><img src="img/ba-entry-mid.jpg" alt="현관 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
+      <div class="ba after"><div class="ph"><img src="img/ba-entry-after.jpg" alt="현관 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
     </div>
     <p class="ba-note" style="margin-bottom:14px">※ 실제 시공 사진은 블로그에서 더 많이 확인하실 수 있습니다.</p>
     <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
@@ -279,10 +281,10 @@ footer b{color:#c2cedb}
     <span class="sec-label">꾸미지줄눈의 원칙</span>
     <h2>같은 줄눈시공이 아닙니다</h2>
     <p class="sec-sub">줄눈의 수명은 눈에 보이지 않는 밑작업에서 결정됩니다.</p>
-    <div class="usp-item"><div class="usp-num">1</div><div><h3>하루 한 집, 대표 직접 시공</h3><p>초보 직원 투입이나 하청 없이, 상담부터 마감까지 대표가 하루 한 집만 책임지고 시공합니다.</p></div></div>
+    <div class="usp-item"><div class="usp-num">1</div><div><h3>하루 한 집, 본사 직접 시공</h3><p>하청 없이 본사 소속 전문 시공팀이 하루 한 집만 맡아 시간에 쫓기지 않고 책임 시공합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">2</div><div><h3>백시멘트를 깊게 파내는 밑작업</h3><p>겉면만 긁어내는 시공과 달리, 타일 측면까지 깊고 일정하게 제거해 줄눈의 수명을 확보합니다.</p></div></div>
-    <div class="usp-item"><div class="usp-num">3</div><div><h3>친환경 폴리우레아 자재</h3><p>인체에 무해한 친환경 인증 폴리우레아 줄눈재만 사용합니다. 황변과 수축이 적어 오래갑니다.</p></div></div>
-    <div class="usp-item"><div class="usp-num">4</div><div><h3>무상 A/S · 거품 없는 견적</h3><p>불필요한 공정으로 비용을 부풀리지 않습니다. 시공 후 문제가 생기면 무상으로 보수해 드립니다.</p></div></div>
+    <div class="usp-item"><div class="usp-num">3</div><div><h3>친환경 폴리우레아 '아스팍톤'</h3><p>무광·무수축·무황변 국산 친환경 줄눈제 아스팍톤을 사용합니다. 어떤 자재를 쓰는지 아래에서 그대로 공개합니다.</p></div></div>
+    <div class="usp-item"><div class="usp-num">4</div><div><h3>계약금 0원, 100% 후불제</h3><p>선입금 없이 시공을 먼저 받고, 결과를 직접 확인하신 뒤 결제합니다. 시공 후에도 철저한 A/S로 책임집니다.</p></div></div>
     <a class="btn-blog track-blog" style="margin-top:24px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 과정 보기</a>
   </div>
 </section>
@@ -296,10 +298,11 @@ footer b{color:#c2cedb}
     <table class="compare">
       <thead><tr><th class="bad">일반 저가 시공</th><th class="good">꾸미지줄눈</th></tr></thead>
       <tbody>
-        <tr><td class="bad">초보 직원·하청 투입</td><td class="good">대표가 하루 한 집만 직접 시공</td></tr>
+        <tr><td class="bad">초보 직원·하청 투입</td><td class="good">본사 시공팀이 하루 한 집만 시공</td></tr>
         <tr><td class="bad">백시멘트 겉면만 긁어냄</td><td class="good">타일 측면까지 깊게 파내는 밑작업</td></tr>
-        <tr><td class="bad">출처 불분명 저가 자재</td><td class="good">친환경 인증 폴리우레아만 사용</td></tr>
-        <tr><td class="bad">시공 후 연락 두절</td><td class="good">무상 A/S로 끝까지 책임</td></tr>
+        <tr><td class="bad">출처 불분명 저가 자재</td><td class="good">친환경 폴리우레아 아스팍톤 사용</td></tr>
+        <tr><td class="bad">계약금·예약금 선입금 요구</td><td class="good">계약금 0원, 확인 후 100% 후불제</td></tr>
+        <tr><td class="bad">시공 후 연락 두절</td><td class="good">철저한 A/S로 끝까지 책임</td></tr>
       </tbody>
     </table>
   </div>
@@ -313,19 +316,19 @@ footer b{color:#c2cedb}
     <p class="sec-sub">자재를 숨기는 업체는 이유가 있습니다. 꾸미지줄눈은 자재부터 투명하게 안내합니다.</p>
     <div class="mat-cards">
       <div class="mat-card">
-        <div class="mimg">폴리우레아 자재 사진<br>(업체 원본 교체 예정)</div>
+        <div class="mimg"><img src="img/mat-aspactone.jpg" alt="아스팍톤 폴리우레아 줄눈제" loading="lazy"></div>
         <div class="mbody">
-          <h3>친환경 폴리우레아 줄눈재 <span class="dummy-tag">브랜드명 확인 중</span></h3>
-          <p>황변(누렇게 변색)과 수축이 적어 오래가는 프리미엄 줄눈재입니다. 인체에 무해한 친환경 인증 제품만 사용합니다.</p>
-          <div class="tagrow"><span class="mtag">친환경 인증</span><span class="mtag">무수축</span><span class="mtag">황변 방지</span><span class="mtag">락스 청소 가능</span></div>
+          <h3>폴리우레아 줄눈제 '아스팍톤'</h3>
+          <p>무광·무펄 마감에 수축과 황변(누렇게 변색)이 없는 국산 친환경(ECO) 줄눈제입니다. 특허 출원 자재로, 오염이 스며들지 않아 물청소만으로 관리됩니다.</p>
+          <div class="tagrow"><span class="mtag">친환경 ECO</span><span class="mtag">무광 마감</span><span class="mtag">무수축</span><span class="mtag">무황변</span></div>
         </div>
       </div>
       <div class="mat-card">
-        <div class="mimg">컬러 샘플 사진<br>(업체 원본 교체 예정)</div>
+        <div class="mimg"><img src="img/mat-colors.jpg" alt="줄눈 컬러 샘플판" loading="lazy"></div>
         <div class="mbody">
-          <h3>프리미엄 친환경 안료</h3>
-          <p>타일 색상에 맞춰 선택할 수 있는 다양한 컬러를 보유하고 있습니다. 상담 시 타일 사진을 보내주시면 어울리는 색상을 추천해 드립니다.</p>
-          <div class="tagrow"><span class="mtag">다양한 컬러</span><span class="mtag">무독성</span><span class="mtag">색상 맞춤 추천</span></div>
+          <h3>시공 당일, 샘플판으로 색상 선택</h3>
+          <p>시공 미팅 때 실제 컬러 샘플판을 타일에 직접 대보고 색상을 정합니다. 사진이 아닌 실물로 비교하니 실패가 없습니다.</p>
+          <div class="tagrow"><span class="mtag">실물 샘플판</span><span class="mtag">다양한 컬러</span><span class="mtag">타일 맞춤 추천</span></div>
         </div>
       </div>
     </div>
@@ -336,23 +339,33 @@ footer b{color:#c2cedb}
 <section id="price">
   <div class="wrap">
     <span class="sec-label">시공 비용 안내</span>
-    <h2>가격, 먼저 공개합니다 <span class="dummy-tag">아래 금액은 전부 예시</span></h2>
-    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 부위·면적 확인 후 정확한 견적을 안내드립니다.</p>
+    <h2>가격, 먼저 공개합니다</h2>
+    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 폴리우레아(아스팍톤) 기준 단가입니다.</p>
     <table class="price-table">
-      <thead><tr><th>시공 부위</th><th style="text-align:right">비용</th></tr></thead>
+      <thead><tr><th>기본 패키지</th><th style="text-align:right">비용</th></tr></thead>
       <tbody>
-        <tr><td>현관</td><td><span class="nowrap">8만원~</span></td></tr>
-        <tr><td>욕실 1곳 (바닥+벽 하단)</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>주방 (싱크 앞 바닥)</td><td><span class="nowrap">7만원~</span></td></tr>
-        <tr><td>베란다 · 다용도실</td><td><span class="nowrap">8만원~</span></td></tr>
-        <tr><td>거실 폴리싱 타일</td><td><span class="from">면적 확인 후 안내</span></td></tr>
+        <tr><td>현관 + 욕실 바닥 2곳</td><td><span class="nowrap">25만원</span></td></tr>
+        <tr><td>현관 + 욕실 바닥 2곳 + 샤워부스 벽</td><td><span class="nowrap">35만원</span></td></tr>
       </tbody>
     </table>
     <div class="pkg">
-      <div class="t">입주 패키지 (현관+욕실 2곳+베란다)<small>가장 많이 선택하시는 구성</small></div>
-      <div class="p nowrap">29만원~</div>
+      <div class="t">현관 + 욕실 바닥 2곳 + 샤워부스 벽 + 욕조 벽<small>가장 많이 선택하시는 구성</small></div>
+      <div class="p nowrap">45만원</div>
     </div>
-    <p class="price-note">※ 위 금액은 시안용 예시 가격입니다. 실제 비용은 평형·타일 상태·시공 범위에 따라 달라질 수 있으며, 방문 전 사진 상담으로 정확한 견적을 안내드립니다.</p>
+    <table class="price-table" style="margin-top:12px">
+      <thead><tr><th>추가 시공</th><th style="text-align:right">비용</th></tr></thead>
+      <tbody>
+        <tr><td>베란다</td><td><span class="nowrap">5만원~</span></td></tr>
+        <tr><td>거실 펜트리 / 현관 펜트리</td><td><span class="nowrap">각 5만원~</span></td></tr>
+        <tr><td>세탁실</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>아트월</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>주방 벽</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>실리콘 오염방지</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>욕실 전체 벽</td><td><span class="nowrap">15만원~</span></td></tr>
+        <tr><td>거실</td><td><span class="nowrap">40만원~</span></td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">※ 타일 사이즈와 면적에 따라 추가 요금이 발생할 수 있습니다. 아파트명·평형·시공 부위를 알려주시면 정확한 견적을 안내드립니다.</p>
   </div>
 </section>
 
@@ -362,10 +375,12 @@ footer b{color:#c2cedb}
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
     <p class="sec-sub">&nbsp;</p>
-    <div class="step"><div class="step-num">1</div><div><h3>카톡 · 전화 상담</h3><p>아파트명, 평형, 원하시는 부위를 알려주세요. 타일 사진만 보내주셔도 방문 없이 견적 안내가 가능합니다.</p></div></div>
-    <div class="step"><div class="step-num">2</div><div><h3>시공일 예약</h3><p>입주 전이라면 입주 청소 이후 ~ 이사 전, 거주 중이시라면 편하신 날짜로 잡아드립니다.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div><h3>방문 시공 (하루 한 집)</h3><p>백시멘트 제거 밑작업부터 마감까지 대표가 직접 진행합니다.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div><h3>검수 · 무상 A/S</h3><p>함께 확인 후 마무리하며, 이후 문제 발생 시 무상으로 보수해 드립니다.</p></div></div>
+    <div class="step"><div class="step-num">1</div><div><h3>상담 (전화 · 카카오톡)</h3><p>아파트명, 평형, 원하시는 부위를 알려주세요. 타일 사진만 보내주셔도 견적 안내가 가능합니다.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h3>계약서 작성</h3><p>시공 범위와 금액을 확정합니다. 계약금은 받지 않습니다 — 100% 후불제입니다.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h3>해피콜</h3><p>시공 전 일정과 시공 내용을 한 번 더 최종 확인해 드립니다.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h3>시공 미팅</h3><p>현장을 확인하고 세부 사항을 안내드립니다. 컬러 샘플판으로 줄눈 색상도 이때 함께 정합니다.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h3>줄눈 시공 (하루 한 집)</h3><p>전문 장비와 아스팍톤 자재로 밑작업부터 마감까지 본사 시공팀이 진행합니다.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div><h3>고객 확인 후 결제</h3><p>시공 결과를 직접 확인하신 뒤 결제하시면 됩니다. 이후에도 철저한 A/S로 책임집니다.</p></div></div>
   </div>
 </section>
 
@@ -376,12 +391,12 @@ footer b{color:#c2cedb}
     <h2>수도권 신축 단지에서<br>이미 검증됐습니다</h2>
     <p class="sec-sub">우리 단지 이름이 보이시나요? 같은 타일, 같은 구조를 이미 시공해 봤습니다.</p>
     <div class="gallery">
-      <div class="g">욕실 바닥<br>시공 사진</div>
-      <div class="g">욕실 벽<br>시공 사진</div>
-      <div class="g">현관<br>시공 사진</div>
-      <div class="g">주방<br>시공 사진</div>
-      <div class="g">베란다<br>시공 사진</div>
-      <div class="g">거실 타일<br>시공 사진</div>
+      <div class="g"><img src="img/g-bath.jpg" alt="욕실 줄눈 시공 사례" loading="lazy"><span class="lb">욕실</span></div>
+      <div class="g"><img src="img/g-entry.jpg" alt="현관 줄눈 시공 사례" loading="lazy"><span class="lb">현관</span></div>
+      <div class="g"><img src="img/g-living.jpg" alt="거실 줄눈 시공 사례" loading="lazy"><span class="lb">거실</span></div>
+      <div class="g"><img src="img/g-veranda.jpg" alt="베란다 줄눈 시공 사례" loading="lazy"><span class="lb">베란다</span></div>
+      <div class="g"><img src="img/g-laundry.jpg" alt="세탁실 줄눈 시공 사례" loading="lazy"><span class="lb">세탁실</span></div>
+      <div class="g"><img src="img/g-artwall.jpg" alt="아트월 줄눈 시공 사례" loading="lazy"><span class="lb">아트월</span></div>
     </div>
     <div class="apt-chips">
       <span class="chip">파주 운정자이시그니처</span>
@@ -401,12 +416,13 @@ footer b{color:#c2cedb}
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="wrap">
-    <span class="sec-label">고객 후기 <span class="dummy-tag">예시 문구 — 실제 후기로 교체</span></span>
+    <span class="sec-label">고객 후기</span>
     <h2>먼저 시공한 이웃들의 이야기</h2>
-    <p class="sec-sub">&nbsp;</p>
-    <div class="rv"><div class="stars">★★★★★</div><p>"입주 전에 하길 정말 잘했어요. 옆집은 두 달 만에 욕실 줄눈에 곰팡이 생겼다는데 저희는 물만 뿌려도 깨끗하네요."</p><div class="who">운정자이시그니처 · 30평대 (예시)</div></div>
-    <div class="rv"><div class="stars">★★★★★</div><p>"대표님이 직접 오셔서 하루 종일 꼼꼼하게 해주셨어요. 백시멘트 파내는 것부터 다르다는 걸 눈으로 봤습니다."</p><div class="who">서울숲 아이파크 · 20평대 (예시)</div></div>
-    <div class="rv"><div class="stars">★★★★★</div><p>"견적이 처음 안내받은 금액 그대로였어요. 현장에서 이것저것 추가하자는 얘기가 없어서 좋았습니다."</p><div class="who">광명 자이더샵포레나 · 30평대 (예시)</div></div>
+    <p class="sec-sub">실제 시공 고객님들이 남겨주신 후기입니다.</p>
+    <div class="rv"><div class="stars">★★★★★</div><p>"신축 입주 전에 줄눈 맡겼어요. 9시에 오셔서 색상도 잘 골라주시고, 7시간이나 엄청 꼼꼼히 해주셨네요. 욕실이 훨씬 고급스러워졌습니다."</p><div class="who">신축 입주 전 시공 고객</div></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>"구축 화장실이라 청소 스트레스 컸는데 사장님이 7시간 동안 안전하고 꼼꼼하게 시공해주셨어요! 하자도 찾아주시고 가격도 착해서 진작 할 걸 후회 중입니다. 대만족!"</p><div class="who">구축 욕실 시공 고객</div></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>"약속 시간 딱 맞춰 오셔서 색상 추천도 잘해주시고, 못 봤던 타일 하자까지 찾아주셨어요. 추가 시공도 합리적인 가격에 해주시고 마무리 청소까지 완벽!"</p><div class="who">신축 시공 고객</div></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>"입주 단톡방 추천으로 했는데 역시 퀄리티 대박이네요. 친절한 설명과 꼼꼼한 작업, 타일 맞춤 색상까지 완벽해요. 마감이 너무 깔끔해서 화장실이 고급 호텔 같아졌어요."</p><div class="who">입주 단톡방 소개 고객</div></div>
     <a class="btn-blog track-blog" style="margin-top:8px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
   </div>
 </section>
@@ -417,12 +433,13 @@ footer b{color:#c2cedb}
     <span class="sec-label">자주 묻는 질문</span>
     <h2>궁금하신 점을 모았습니다</h2>
     <p class="sec-sub">&nbsp;</p>
-    <details><summary>시공은 언제 하는 게 좋나요?</summary><div class="a">입주 청소가 끝난 뒤, 이사(가구 반입) 전이 가장 좋습니다. 깨끗한 상태에서 시공해야 밑작업이 수월하고 결과도 오래갑니다. 이미 거주 중이셔도 시공은 가능합니다.</div></details>
-    <details><summary>시공 시간은 얼마나 걸리나요?</summary><div class="a">부위와 범위에 따라 다르지만 보통 반나절~하루가 소요됩니다. 저희는 하루 한 집 원칙이라 시간에 쫓겨 마감하지 않습니다.</div></details>
-    <details><summary>줄눈 색상은 고를 수 있나요?</summary><div class="a">네, 타일 색상에 맞춰 다양한 색상 중에서 선택하실 수 있습니다. 상담 시 타일 사진을 보내주시면 어울리는 색상을 추천드립니다.</div></details>
-    <details><summary>구축 아파트도 가능한가요?</summary><div class="a">가능합니다. 기존 줄눈의 오염·곰팡이 상태를 확인한 뒤 제거 공정을 포함해 견적을 안내드립니다.</div></details>
+    <details><summary>시공 날짜는 어떻게 정하나요?</summary><div class="a">신축 아파트는 보통 입주 3일 전부터 입주청소·탄성코트·줄눈시공을 할 수 있게 세대를 열어줍니다. 입주 날짜가 정해지면 입주 3일 전 전후로 일정을 맞추시면 됩니다.</div></details>
+    <details><summary>시공은 언제 하는 게 좋나요?</summary><div class="a">신축은 백시멘트를 파내는 과정에서 가루가 날리기 때문에 <b>입주청소 전</b>에 줄눈시공을 받는 것이 좋습니다. 구축도 이사 전 시공이 가능하다면 입주청소 전을 권장드리며, 이미 이사하셨거나 거주 중이셔도 시공은 가능합니다.</div></details>
+    <details><summary>시공 시간은 얼마나 걸리나요?</summary><div class="a">줄눈 범위와 현장 상황에 따라 다르지만 보통 반나절에서 길게는 하루가 소요됩니다. 시공 당일 범위와 현장 상황을 확인한 뒤 정확한 소요 시간을 안내드립니다.</div></details>
+    <details><summary>줄눈 색상은 고를 수 있나요?</summary><div class="a">네, 시공 당일 미팅에서 실제 컬러 샘플판을 타일에 직접 대보고 다양한 색상 중에 선택하실 수 있습니다.</div></details>
+    <details><summary>구축 아파트도 가능한가요?</summary><div class="a">네 가능합니다. 다만 기존 줄눈의 상태를 확인한 뒤 견적을 안내드립니다.</div></details>
     <details><summary>서울이 아닌데도 와주시나요?</summary><div class="a">서울과 수도권(경기·인천) 전 지역 방문 시공합니다. 인천 본점과 파주점을 운영하고 있어 수도권 어디든 빠르게 방문 가능합니다. 아파트명을 알려주시면 예약 가능 일정을 바로 확인해 드립니다.</div></details>
-    <details><summary>줄눈 외에 다른 입주 시공도 함께 되나요?</summary><div class="a">네, 꾸미지는 입주 인테리어 토탈 케어 서비스를 운영합니다. 커튼·블라인드, 시스템 에어컨, 입주청소, 나노코팅, 탄성코트, 새집증후군 케어, 중문, 방충망, 조명 등을 줄눈과 함께 진행하시면 일정과 비용 모두 효율적입니다. 상담 시 함께 문의해 주세요.</div></details>
+    <details><summary>줄눈 외에 다른 입주 시공도 함께 되나요?</summary><div class="a">네, 꾸미지는 입주 인테리어 토탈 케어 서비스를 운영합니다. 탄성코트, 입주청소, 커튼&블라인드, 나노코팅, 새집증후군 케어, 시스템에어컨, 에어컨 분해청소, 냉장고장&붙박이장, 중문, 조명&실링팬 등을 줄눈과 함께 진행하실 수 있습니다. 상담 시 함께 문의해 주세요.</div></details>
   </div>
 </section>
 
@@ -433,7 +450,7 @@ footer b{color:#c2cedb}
     <p class="sec-sub">3분이면 견적을 받아보실 수 있습니다.<br>입주 시즌에는 예약이 빠르게 마감됩니다.</p>
     <div class="cta-col">
       <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
-      <a class="btn btn-call track-call" href="tel:1600-7201">📞 <span class="nowrap">1600-7201</span></a>
+      <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 <span class="nowrap">010-4710-6616</span></a>
     </div>
   </div>
 </section>
@@ -444,7 +461,7 @@ footer b{color:#c2cedb}
     대표: 이기환 | 사업자등록번호: 000-00-00000 (확인 후 기재)<br>
     본점: 인천 중구 하늘별빛로65번길 21, 썬앤문타워 603호<br>
     파주점: 경기도 파주시 산남로107번길 1<br>
-    대표번호: <span class="nowrap">1600-7201</span> | 휴대폰: <span class="nowrap">010-2047-6738</span><br>
+    대표번호: <span class="nowrap">1600-7201</span> | 상담전화: <span class="nowrap">010-4710-6616</span><br>
     <a href="https://blog.naver.com/wavezelrabi" style="color:#8698ac">공식 블로그</a><br><br>
     © 2026 꾸미지줄눈. All rights reserved.
   </div>
@@ -452,7 +469,7 @@ footer b{color:#c2cedb}
 
 <!-- STICKY CTA -->
 <div class="sticky-cta">
-  <a class="s-call track-call" href="tel:1600-7201">📞 전화 상담</a>
+  <a class="s-call track-call" href="tel:010-4710-6616">📞 전화 상담</a>
   <a class="s-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡 문의</a>
 </div>
 
