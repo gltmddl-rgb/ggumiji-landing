@@ -10,7 +10,9 @@
   ✅ 전화(상담 010-4710-6616), 실가격표(25/35/45), 실후기 4건, 실사진 14장,
      자재 실명(아스팍톤), 6단계 절차, 후불제/본사시공/철저한A/S 문구 반영 완료
   1. 사업자등록번호: 000-00-00000 → 실제 번호 (파워링크 심사 필수)
-  2. 오픈카톡 링크: https://open.kakao.com/o/EXAMPLE → 실제 링크
+  2. 오픈카톡 링크 수령 시: sms:010-4710-6616 로 임시 연결해 둔 버튼 4곳
+     (히어로/가격/최종CTA/하단바)을 오픈카톡 URL로 교체하고
+     라벨을 "문자로/문자 문의" → "카톡으로/카톡 문의"로 원복
   ※ 주의: "대표 직접 시공"(본사 여러 팀), "무상 A/S"(무상 아님) 표현 금지 — 업체 요청
   ═══════════════════════════════════════════════════════════
 -->
@@ -25,6 +27,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:70px}
 body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:var(--ink);background:#fff;line-height:1.6;word-break:keep-all;padding-bottom:64px}
 img{max-width:100%}
 .nowrap{white-space:nowrap}
@@ -62,6 +65,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .btn-call{background:var(--teal);color:#fff}
 .btn small{font-size:12px;font-weight:500;opacity:.75}
 .hero-note{font-size:12.5px;color:#9db4cd;margin-top:12px}
+.hero-jump{display:inline-block;margin-top:14px;color:#dce9f6;font-size:14.5px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px}
 .badge{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px 6px;text-align:center}
 .badge .ico{font-size:20px;display:block;margin-bottom:4px}
@@ -224,10 +228,11 @@ footer b{color:#c2cedb}
     <h1 id="heroTitle">아파트 줄눈시공,<br><span class="hl">현관+욕실 2곳 25만원</span>부터</h1>
     <p class="hero-price">계약금 없이 시공 확인 후 결제하는 <strong>100% 후불제</strong></p>
     <div class="cta-col">
-      <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
+      <a class="btn btn-kakao track-kakao" href="sms:010-4710-6616">💬 문자로 3분 견적받기</a>
       <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 전화 상담 <small class="nowrap">010-4710-6616</small></a>
     </div>
-    <p class="hero-note">입주 전이 가장 좋지만, 이미 살고 계신 집·구축 아파트도 동일하게 시공합니다.<br>시공 중에는 전화 연결이 어려울 수 있습니다. 카톡 문의 시 순차적으로 답변드립니다.</p>
+    <a class="hero-jump" href="#price">💰 시공 비용표 먼저 확인하기 ↓</a>
+    <p class="hero-note">입주 전이 가장 좋지만, 이미 살고 계신 집·구축 아파트도 동일하게 시공합니다.<br>시공 중에는 전화 연결이 어려울 수 있습니다. 문자로 남겨주시면 순차적으로 답변드립니다.</p>
     <div class="badges">
       <div class="badge"><span class="ico">🏠</span><span class="tx">하루<br>한 집 시공</span></div>
       <div class="badge"><span class="ico">👷</span><span class="tx">본사<br>직접 시공</span></div>
@@ -247,20 +252,6 @@ footer b{color:#c2cedb}
       <div class="card"><span class="ico">🦠</span><h3>곰팡이 · 물때</h3><p>백시멘트가 물을 머금어 타일 사이에 붉은 물때와 곰팡이가 번식하기 시작합니다.</p></div>
       <div class="card"><span class="ico">🧽</span><h3>지워지지 않는 오염</h3><p>현관·주방 줄눈에 스민 얼룩은 솔로 문질러도 원래 색으로 돌아오지 않습니다.</p></div>
       <div class="card"><span class="ico">💸</span><h3>뒤늦은 보수 비용</h3><p>오염된 뒤에는 제거 공정이 추가되어 비용과 시간이 더 들어갑니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TARGETS -->
-<section>
-  <div class="wrap">
-    <span class="sec-label">시공 대상</span>
-    <h2>우리 집은 해당될까?<br>이런 집 모두 시공합니다</h2>
-    <p class="sec-sub">신축 입주 전이 가장 이상적이지만, 살고 계신 집도 늦지 않았습니다.</p>
-    <div class="cards">
-      <div class="card"><span class="ico">🔑</span><h3>신축 입주 전 <span class="dummy-tag" style="color:var(--teal-d);background:var(--teal-bg);border-color:var(--teal)">추천</span></h3><p>가구가 들어오기 전이라 결과가 가장 좋습니다. 백시멘트 가루가 날리는 작업 특성상 입주청소 전(보통 입주 3일 전)이 최적기입니다.</p></div>
-      <div class="card"><span class="ico">🛋️</span><h3>이미 거주 중인 집</h3><p>살면서도 시공 가능합니다. 욕실·현관 등 부위별로 나눠 생활에 지장 없이 진행합니다.</p></div>
-      <div class="card"><span class="ico">🏢</span><h3>구축 아파트</h3><p>곰팡이·물때로 오염된 기존 줄눈을 깨끗하게 제거한 뒤 새 줄눈으로 재시공합니다.</p></div>
     </div>
   </div>
 </section>
@@ -289,6 +280,45 @@ footer b{color:#c2cedb}
     </div>
     <p class="ba-note" style="margin-bottom:14px">※ 실제 시공 사진은 블로그에서 더 많이 확인하실 수 있습니다.</p>
     <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="wrap">
+    <span class="sec-label">시공 비용 안내</span>
+    <h2>가격, 먼저 공개합니다</h2>
+    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 폴리우레아(아스팍톤) 기준 단가입니다.</p>
+    <table class="price-table">
+      <thead><tr><th>기본 패키지</th><th style="text-align:right">비용</th></tr></thead>
+      <tbody>
+        <tr><td>현관 + 욕실 바닥 2곳</td><td><span class="nowrap">25만원</span></td></tr>
+        <tr><td>현관 + 욕실 바닥 2곳 + 샤워부스 벽</td><td><span class="nowrap">35만원</span></td></tr>
+      </tbody>
+    </table>
+    <div class="pkg">
+      <div class="t">현관 + 욕실 바닥 2곳 + 샤워부스 벽 + 욕조 벽<small>가장 많이 선택하시는 구성</small></div>
+      <div class="p nowrap">45만원</div>
+    </div>
+    <table class="price-table" style="margin-top:12px">
+      <thead><tr><th>추가 시공</th><th style="text-align:right">비용</th></tr></thead>
+      <tbody>
+        <tr><td>베란다</td><td><span class="nowrap">5만원~</span></td></tr>
+        <tr><td>거실 펜트리 / 현관 펜트리</td><td><span class="nowrap">각 5만원~</span></td></tr>
+        <tr><td>세탁실</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>아트월</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>주방 벽</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>실리콘 오염방지</td><td><span class="nowrap">10만원~</span></td></tr>
+        <tr><td>욕실 전체 벽</td><td><span class="nowrap">15만원~</span></td></tr>
+        <tr><td>거실</td><td><span class="nowrap">40만원~</span></td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">※ 타일 사이즈와 면적에 따라 추가 요금이 발생할 수 있습니다. 아파트명·평형·시공 부위를 알려주시면 정확한 견적을 안내드립니다.</p>
+    <div class="cta-col" style="margin-top:22px">
+      <a class="btn btn-kakao track-kakao" href="sms:010-4710-6616">💬 문자로 3분 견적받기</a>
+      <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 전화 상담</a>
+    </div>
+    <p class="price-note" style="text-align:center;margin-top:10px">아파트명 · 평형 · 원하는 부위만 보내주시면 바로 견적을 알려드립니다.</p>
   </div>
 </section>
 
@@ -352,37 +382,17 @@ footer b{color:#c2cedb}
   </div>
 </section>
 
-<!-- PRICE -->
-<section id="price">
+<!-- TARGETS -->
+<section>
   <div class="wrap">
-    <span class="sec-label">시공 비용 안내</span>
-    <h2>가격, 먼저 공개합니다</h2>
-    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 폴리우레아(아스팍톤) 기준 단가입니다.</p>
-    <table class="price-table">
-      <thead><tr><th>기본 패키지</th><th style="text-align:right">비용</th></tr></thead>
-      <tbody>
-        <tr><td>현관 + 욕실 바닥 2곳</td><td><span class="nowrap">25만원</span></td></tr>
-        <tr><td>현관 + 욕실 바닥 2곳 + 샤워부스 벽</td><td><span class="nowrap">35만원</span></td></tr>
-      </tbody>
-    </table>
-    <div class="pkg">
-      <div class="t">현관 + 욕실 바닥 2곳 + 샤워부스 벽 + 욕조 벽<small>가장 많이 선택하시는 구성</small></div>
-      <div class="p nowrap">45만원</div>
+    <span class="sec-label">시공 대상</span>
+    <h2>우리 집은 해당될까?<br>이런 집 모두 시공합니다</h2>
+    <p class="sec-sub">신축 입주 전이 가장 이상적이지만, 살고 계신 집도 늦지 않았습니다.</p>
+    <div class="cards">
+      <div class="card"><span class="ico">🔑</span><h3>신축 입주 전 <span class="dummy-tag" style="color:var(--teal-d);background:var(--teal-bg);border-color:var(--teal)">추천</span></h3><p>가구가 들어오기 전이라 결과가 가장 좋습니다. 백시멘트 가루가 날리는 작업 특성상 입주청소 전(보통 입주 3일 전)이 최적기입니다.</p></div>
+      <div class="card"><span class="ico">🛋️</span><h3>이미 거주 중인 집</h3><p>살면서도 시공 가능합니다. 욕실·현관 등 부위별로 나눠 생활에 지장 없이 진행합니다.</p></div>
+      <div class="card"><span class="ico">🏢</span><h3>구축 아파트</h3><p>곰팡이·물때로 오염된 기존 줄눈을 깨끗하게 제거한 뒤 새 줄눈으로 재시공합니다.</p></div>
     </div>
-    <table class="price-table" style="margin-top:12px">
-      <thead><tr><th>추가 시공</th><th style="text-align:right">비용</th></tr></thead>
-      <tbody>
-        <tr><td>베란다</td><td><span class="nowrap">5만원~</span></td></tr>
-        <tr><td>거실 펜트리 / 현관 펜트리</td><td><span class="nowrap">각 5만원~</span></td></tr>
-        <tr><td>세탁실</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>아트월</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>주방 벽</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>실리콘 오염방지</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>욕실 전체 벽</td><td><span class="nowrap">15만원~</span></td></tr>
-        <tr><td>거실</td><td><span class="nowrap">40만원~</span></td></tr>
-      </tbody>
-    </table>
-    <p class="price-note">※ 타일 사이즈와 면적에 따라 추가 요금이 발생할 수 있습니다. 아파트명·평형·시공 부위를 알려주시면 정확한 견적을 안내드립니다.</p>
   </div>
 </section>
 
@@ -392,7 +402,7 @@ footer b{color:#c2cedb}
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
     <p class="sec-sub">&nbsp;</p>
-    <div class="step"><div class="step-num">1</div><div><h3>상담 (전화 · 카카오톡)</h3><p>아파트명, 평형, 원하시는 부위를 알려주세요. 타일 사진만 보내주셔도 견적 안내가 가능합니다.</p></div></div>
+    <div class="step"><div class="step-num">1</div><div><h3>상담 (전화 · 문자)</h3><p>아파트명, 평형, 원하시는 부위를 알려주세요. 타일 사진만 보내주셔도 견적 안내가 가능합니다.</p></div></div>
     <div class="step"><div class="step-num">2</div><div><h3>계약서 작성</h3><p>시공 범위와 금액을 확정합니다. 계약금은 받지 않습니다 — 100% 후불제입니다.</p></div></div>
     <div class="step"><div class="step-num">3</div><div><h3>해피콜</h3><p>시공 전 일정과 시공 내용을 한 번 더 최종 확인해 드립니다.</p></div></div>
     <div class="step"><div class="step-num">4</div><div><h3>시공 미팅</h3><p>현장을 확인하고 세부 사항을 안내드립니다. 컬러 샘플판으로 줄눈 색상도 이때 함께 정합니다.</p></div></div>
@@ -466,7 +476,7 @@ footer b{color:#c2cedb}
     <h2>아파트명과 평형만 보내주세요</h2>
     <p class="sec-sub">3분이면 견적을 받아보실 수 있습니다.<br>입주 시즌에는 예약이 빠르게 마감됩니다.</p>
     <div class="cta-col">
-      <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
+      <a class="btn btn-kakao track-kakao" href="sms:010-4710-6616">💬 문자로 3분 견적받기</a>
       <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 <span class="nowrap">010-4710-6616</span></a>
     </div>
   </div>
@@ -487,7 +497,7 @@ footer b{color:#c2cedb}
 <!-- STICKY CTA -->
 <div class="sticky-cta">
   <a class="s-call track-call" href="tel:010-4710-6616">📞 전화 상담</a>
-  <a class="s-kakao track-kakao" href="https://open.kakao.com/o/EXAMPLE" target="_blank" rel="noopener">💬 카톡 문의</a>
+  <a class="s-kakao track-kakao" href="sms:010-4710-6616">💬 문자 문의</a>
 </div>
 
 <script>
