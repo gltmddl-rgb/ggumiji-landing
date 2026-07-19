@@ -87,6 +87,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .ba-note{font-size:12.5px;color:var(--sub);text-align:center}
 @media (min-width:640px){.ba .cap{font-size:13px}}
 
+/* ── closeup callout ── */
+.cu-wrap{display:flex;align-items:center;gap:10px;margin:18px 0}
+.cu-box{flex:1;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.cu-box img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.cu-box .cap{font-size:12px;font-weight:700;text-align:center;padding:8px 4px}
+.cu-box.before .cap{color:#b0533a}
+.cu-box.after .cap{color:var(--teal-d)}
+.cu-arrow{flex:none;font-size:20px;color:var(--sub)}
+.cu-callout{background:var(--teal-bg);border:1px solid var(--teal);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--ink);line-height:1.6}
+.cu-callout b{color:var(--teal-d)}
+
 /* ── USP ── */
 .usp{background:var(--navy);color:#fff}
 .usp h2,.usp .sec-sub{color:#fff}
@@ -258,13 +269,19 @@ footer b{color:#c2cedb}
 <section>
   <div class="wrap">
     <span class="sec-label">시공 과정 전후 비교</span>
-    <h2>백시멘트를 파내는 밑작업까지,<br>과정을 전부 보여드립니다</h2>
-    <p class="sec-sub">겉면만 덧바르는 시공과의 차이는 가운데 '밑작업' 사진에 있습니다. 실제 시공 현장 사진입니다.</p>
+    <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
+    <p class="sec-sub">타일 이음새(줄눈)는 시공 후에도 그대로 보입니다. 달라지는 건 <b>색과 재질</b>입니다 — 물을 흡수해 누렇게 뜨던 백시멘트가, 오염이 스며들지 않는 짙은 색 폴리우레아로 바뀝니다.</p>
     <div class="ba-grid">
       <div class="ba before"><div class="ph"><img src="img/ba-bath-before.jpg" alt="욕실 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
       <div class="ba mid"><div class="ph"><img src="img/ba-bath-mid.jpg" alt="욕실 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
       <div class="ba after"><div class="ph"><img src="img/ba-bath-after.jpg" alt="욕실 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
     </div>
+    <div class="cu-wrap">
+      <div class="cu-box before"><img src="img/cu-before.jpg" alt="시공 전 백시멘트 줄눈 확대"><div class="cap">시공 전 (백시멘트)</div></div>
+      <div class="cu-arrow">→</div>
+      <div class="cu-box after"><img src="img/cu-after.jpg" alt="시공 후 폴리우레아 줄눈 확대"><div class="cap">시공 후 (폴리우레아)</div></div>
+    </div>
+    <p class="cu-callout">🔍 줄눈 확대컷: <b>흰색 · 무광 · 오염 흡수</b>하던 줄눈이 → <b>짙은 색 · 광택 · 오염 차단</b> 재질로 바뀝니다. 선 자체가 사라지는 게 아니라, 오래 깨끗하게 유지되는 소재로 교체되는 것입니다.</p>
     <div class="ba-grid">
       <div class="ba before"><div class="ph"><img src="img/ba-entry-before.jpg" alt="현관 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
       <div class="ba mid"><div class="ph"><img src="img/ba-entry-mid.jpg" alt="현관 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
