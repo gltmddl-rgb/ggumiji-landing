@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>꾸미지줄눈 | 서울·수도권 신축 아파트 줄눈시공 전문</title>
-<meta name="description" content="하루 한 집, 본사 시공팀이 직접 시공하는 줄눈 전문 꾸미지줄눈. 친환경 폴리우레아 아스팍톤, 계약금 0원 100% 후불제. 서울·수도권 신축 입주 전은 물론 거주 중·구축 아파트까지 현관+욕실 2곳 25만원부터.">
+<meta name="description" content="하루 한 집, 본사 시공팀이 직접 시공하는 줄눈 전문 꾸미지줄눈. 친환경 자재 3종(폴리우레아·아스팍톤·케라폭시) 선택, 계약금 0원 100% 후불제. 서울·수도권 신축 입주 전은 물론 거주 중·구축 아파트까지 욕실 1곳 10만원부터.">
 
 <!-- 단지 카페 · 입주 단톡방 공유 시 미리보기 카드 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="꾸미지줄눈">
-<meta property="og:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공 (현관+욕실 2곳 25만원~)">
-<meta property="og:description" content="하루 한 집 · 계약금 0원 100% 후불제 · 친환경 폴리우레아 아스팍톤. 신축 입주 전은 물론 거주 중·구축도 시공합니다.">
+<meta property="og:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공 (욕실 1곳 10만원~)">
+<meta property="og:description" content="하루 한 집 · 계약금 0원 100% 후불제 · 친환경 자재 3종 선택. 신축 입주 전은 물론 거주 중·구축도 시공합니다.">
 <meta property="og:image" content="img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공">
-<meta name="twitter:description" content="현관+욕실 2곳 25만원~ · 계약금 0원 100% 후불제 · 친환경 아스팍톤">
+<meta name="twitter:description" content="욕실 1곳 10만원~ · 계약금 0원 100% 후불제 · 친환경 자재 3종 선택">
 <meta name="twitter:image" content="img/og-image.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d7402f'/%3E%3Cpath d='M16 6L4 16h3v10h7v-6h4v6h7V16h3L16 6z' fill='white'/%3E%3C/svg%3E">
@@ -32,6 +32,11 @@
      (예: https://도메인/img/og-image.jpg) — 카카오톡 공유 미리보기는
      상대경로를 읽지 못하는 경우가 있어 절대경로가 안전
   ※ 주의: "대표 직접 시공"(본사 여러 팀), "무상 A/S"(무상 아님) 표현 금지 — 업체 요청
+  ※ 확인 필요: 히어로/가격표의 "욕실 1곳 10만원~"은 업체 단가표에 없는 항목.
+     단가표 최소 단위는 '현관+욕실바닥2 = 25만원'. 욕실 1곳 단독 시공이
+     실제 가능한지, 10만원이 맞는지 업체 확인 후 확정할 것
+  ※ 자재 3종(폴리우레아/아스팍톤/케라폭시) 정보는 2026-08 업체 피드백 기준.
+     아스팍톤은 '무황변·무광'이 아니라 '황변 있음·약한 광'이 맞음(제품 배너 문구와 다름)
   ※ 심사 참고: 사업자등록증상 종목은 '입주청소'(서비스업). 줄눈시공은 동일 업태 내
      서비스로 광고 가능하나, 심사 반려 시 업종 추가 등록 필요할 수 있음
   ═══════════════════════════════════════════════════════════
@@ -146,14 +151,24 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 
 /* ── materials ── */
 .mat-cards{display:grid;gap:12px}
-.mat-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.mat-card .mimg{aspect-ratio:16/9;background:#f4f6f8;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.mat-card .mimg img{width:100%;height:100%;object-fit:contain;display:block}
-.mat-card .mbody{padding:16px 18px 18px}
-.mat-card h3{font-size:16px;margin-bottom:4px;letter-spacing:-.01em}
-.mat-card p{font-size:13.5px;color:var(--sub)}
-.mat-card .tagrow{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-.mat-card .mtag{font-size:11.5px;font-weight:700;color:var(--teal-d);background:var(--teal-bg);padding:3px 9px;border-radius:12px}
+.mat-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.mat-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.mat-head h3{font-size:17.5px;letter-spacing:-.02em}
+.mat-origin{font-size:11.5px;font-weight:700;color:var(--sub);background:var(--bg);border:1px solid var(--line);padding:2px 8px;border-radius:10px}
+.mat-cure{font-size:12.5px;font-weight:700;color:var(--teal-d)}
+.mat-spec{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0}
+.mat-spec>div{text-align:center;background:var(--bg);border-radius:9px;padding:9px 4px}
+.mat-spec .k{display:block;font-size:11px;color:var(--sub);margin-bottom:3px}
+.mat-spec .v{font-size:13px;font-weight:800;letter-spacing:-.01em}
+.mat-spec .good{color:var(--teal-d)}
+.mat-spec .mid{color:#a07a1e}
+.mat-rec{background:var(--teal-bg);border-left:3px solid var(--teal);border-radius:0 9px 9px 0;padding:10px 12px;font-size:13px;color:var(--ink);line-height:1.55}
+.mat-rec b{color:var(--teal-d)}
+.mat-note{font-size:12.5px;color:var(--sub);margin-top:14px;line-height:1.7}
+.mat-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.mat-photo{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.mat-photo img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f4f6f8;display:block}
+.mat-photo .cap{font-size:12px;font-weight:700;text-align:center;padding:9px 6px;color:var(--sub)}
 
 /* ── gallery ── */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
@@ -246,7 +261,7 @@ footer b{color:#c2cedb}
 <div class="hero">
   <div class="wrap">
     <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
-    <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">현관+욕실 2곳 25만원</span>부터</span></h1>
+    <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">욕실 1곳 10만원</span>부터</span></h1>
     <p class="hero-price">계약금 없이 시공 확인 후 결제하는 <strong class="nowrap">100% 후불제</strong></p>
     <div class="cta-col">
       <a class="btn btn-kakao track-kakao" href="sms:010-4710-6616">💬 카톡으로 3분 견적받기</a>
@@ -282,7 +297,7 @@ footer b{color:#c2cedb}
   <div class="wrap">
     <span class="sec-label">시공 과정 전후 비교</span>
     <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
-    <p class="sec-sub">타일 이음새(줄눈)는 시공 후에도 그대로 보입니다. 달라지는 건 <b>색과 재질</b>입니다 — 물을 흡수해 누렇게 뜨던 백시멘트가, 오염이 스며들지 않는 짙은 색 폴리우레아로 바뀝니다.</p>
+    <p class="sec-sub">타일 이음새(줄눈)는 시공 후에도 그대로 보입니다. 달라지는 건 <b>색과 재질</b>입니다 — 물을 흡수해 누렇게 뜨던 백시멘트가, 오염이 스며들지 않는 전용 줄눈제로 바뀝니다.</p>
     <div class="ba-grid">
       <div class="ba before"><div class="ph"><img src="img/ba-bath-before.jpg" alt="욕실 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
       <div class="ba mid"><div class="ph"><img src="img/ba-bath-mid.jpg" alt="욕실 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
@@ -291,9 +306,9 @@ footer b{color:#c2cedb}
     <div class="cu-wrap">
       <div class="cu-box before"><img src="img/cu-before.jpg" alt="시공 전 백시멘트 줄눈 확대"><div class="cap">시공 전 (백시멘트)</div></div>
       <div class="cu-arrow">→</div>
-      <div class="cu-box after"><img src="img/cu-after.jpg" alt="시공 후 폴리우레아 줄눈 확대"><div class="cap">시공 후 (폴리우레아)</div></div>
+      <div class="cu-box after"><img src="img/cu-after.jpg" alt="시공 후 전용 줄눈제 확대"><div class="cap">시공 후 (전용 줄눈제)</div></div>
     </div>
-    <p class="cu-callout">🔍 줄눈 확대컷: <b>흰색 · 무광 · 오염 흡수</b>하던 줄눈이 → <b>짙은 색 · 광택 · 오염 차단</b> 재질로 바뀝니다. 선 자체가 사라지는 게 아니라, 오래 깨끗하게 유지되는 소재로 교체되는 것입니다.</p>
+    <p class="cu-callout">🔍 줄눈 확대컷: <b>오염을 흡수하던</b> 백시멘트 줄눈이 → <b>오염이 스며들지 않는</b> 전용 줄눈제로 바뀝니다. 선 자체가 사라지는 게 아니라, 오래 깨끗하게 유지되는 소재로 교체되는 것입니다. (사진은 광택이 있는 자재로 시공한 사례이며, 무광 자재도 선택 가능합니다)</p>
     <div class="ba-grid">
       <div class="ba before"><div class="ph"><img src="img/ba-entry-before.jpg" alt="현관 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
       <div class="ba mid"><div class="ph"><img src="img/ba-entry-mid.jpg" alt="현관 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
@@ -309,10 +324,11 @@ footer b{color:#c2cedb}
   <div class="wrap">
     <span class="sec-label">시공 비용 안내</span>
     <h2>가격, 먼저 공개합니다</h2>
-    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 폴리우레아(아스팍톤) 기준 단가입니다.</p>
+    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 아래 금액은 시공 범위별 기준가입니다.</p>
     <table class="price-table">
-      <thead><tr><th>기본 패키지</th><th style="text-align:right">비용</th></tr></thead>
+      <thead><tr><th>기본 시공</th><th style="text-align:right">비용</th></tr></thead>
       <tbody>
+        <tr><td>욕실 바닥 1곳</td><td><span class="nowrap">10만원~</span></td></tr>
         <tr><td>현관 + 욕실 바닥 2곳</td><td><span class="nowrap">25만원</span></td></tr>
         <tr><td>현관 + 욕실 바닥 2곳 + 샤워부스 벽</td><td><span class="nowrap">35만원</span></td></tr>
       </tbody>
@@ -334,7 +350,7 @@ footer b{color:#c2cedb}
         <tr><td>거실</td><td><span class="nowrap">40만원~</span></td></tr>
       </tbody>
     </table>
-    <p class="price-note">※ 타일 사이즈와 면적에 따라 추가 요금이 발생할 수 있습니다. 아파트명·평형·시공 부위를 알려주시면 정확한 견적을 안내드립니다.</p>
+    <p class="price-note">※ 타일 사이즈와 면적, 선택하신 자재에 따라 추가 요금이 발생할 수 있습니다. 아파트명·평형·시공 부위를 알려주시면 정확한 견적을 안내드립니다.</p>
     <div class="cta-col" style="margin-top:22px">
       <a class="btn btn-kakao track-kakao" href="sms:010-4710-6616">💬 카톡으로 3분 견적받기</a>
       <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 전화 상담</a>
@@ -351,7 +367,7 @@ footer b{color:#c2cedb}
     <p class="sec-sub">줄눈의 수명은 눈에 보이지 않는 밑작업에서 결정됩니다.</p>
     <div class="usp-item"><div class="usp-num">1</div><div><h3>하루 한 집, 본사 직접 시공</h3><p>하청 없이 본사 소속 전문 시공팀이 하루 한 집만 맡아 시간에 쫓기지 않고 책임 시공합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">2</div><div><h3>백시멘트를 깊게 파내는 밑작업</h3><p>겉면만 긁어내는 시공과 달리, 타일 측면까지 깊고 일정하게 제거해 줄눈의 수명을 확보합니다.</p></div></div>
-    <div class="usp-item"><div class="usp-num">3</div><div><h3>친환경 폴리우레아 '아스팍톤'</h3><p>무광·무수축·무황변 국산 친환경 줄눈제 아스팍톤을 사용합니다. 어떤 자재를 쓰는지 아래에서 그대로 공개합니다.</p></div></div>
+    <div class="usp-item"><div class="usp-num">3</div><div><h3>친환경 자재 3종, 골라서 시공</h3><p>폴리우레아·아스팍톤·케라폭시 중 집 상황과 일정에 맞는 자재를 함께 고릅니다. 어떤 자재를 쓰는지 아래에서 그대로 공개합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">4</div><div><h3>계약금 0원, 100% 후불제</h3><p>선입금 없이 시공을 먼저 받고, 결과를 직접 확인하신 뒤 결제합니다. 시공 후에도 철저한 A/S로 책임집니다.</p></div></div>
     <a class="btn-blog track-blog" style="margin-top:24px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 과정 보기</a>
   </div>
@@ -368,7 +384,7 @@ footer b{color:#c2cedb}
       <tbody>
         <tr><td class="bad">초보 직원·하청 투입</td><td class="good">본사 시공팀이 하루 한 집만 시공</td></tr>
         <tr><td class="bad">백시멘트 겉면만 긁어냄</td><td class="good">타일 측면까지 깊게 파내는 밑작업</td></tr>
-        <tr><td class="bad">출처 불분명 저가 자재</td><td class="good">친환경 폴리우레아 아스팍톤 사용</td></tr>
+        <tr><td class="bad">자재 종류도 안 알려줌</td><td class="good">친환경 자재 3종 공개 후 함께 선택</td></tr>
         <tr><td class="bad">계약금·예약금 선입금 요구</td><td class="good">계약금 0원, 확인 후 100% 후불제</td></tr>
         <tr><td class="bad">시공 후 연락 두절</td><td class="good">철저한 A/S로 끝까지 책임</td></tr>
       </tbody>
@@ -380,25 +396,45 @@ footer b{color:#c2cedb}
 <section>
   <div class="wrap">
     <span class="sec-label">사용 자재</span>
-    <h2>어떤 자재를 쓰는지<br>먼저 공개합니다</h2>
-    <p class="sec-sub">자재를 숨기는 업체는 이유가 있습니다. 꾸미지줄눈은 자재부터 투명하게 안내합니다.</p>
+    <h2>자재를 고르실 수 있습니다</h2>
+    <p class="sec-sub">줄눈 자재는 종류마다 장단점이 다릅니다. 한 가지만 쓰고 "좋은 자재"라고 하는 대신, 3가지를 모두 공개하고 집 상황에 맞는 것을 함께 골라드립니다. <b>3가지 모두 친환경 자재</b>입니다.</p>
     <div class="mat-cards">
+
       <div class="mat-card">
-        <div class="mimg"><img src="img/mat-aspactone.jpg" alt="아스팍톤 폴리우레아 줄눈제" loading="lazy"></div>
-        <div class="mbody">
-          <h3>폴리우레아 줄눈제 '아스팍톤'</h3>
-          <p>무광·무펄 마감에 수축과 황변(누렇게 변색)이 없는 국산 친환경(ECO) 줄눈제입니다. 특허 출원 자재로, 오염이 스며들지 않아 물청소만으로 관리됩니다.</p>
-          <div class="tagrow"><span class="mtag">친환경 ECO</span><span class="mtag">무광 마감</span><span class="mtag">무수축</span><span class="mtag">무황변</span></div>
+        <div class="mat-head"><h3>폴리우레아</h3><span class="mat-origin">국산</span><span class="mat-cure">경화 1일</span></div>
+        <div class="mat-spec">
+          <div><span class="k">황변</span><span class="v good">없음</span></div>
+          <div><span class="k">수축·팽창</span><span class="v mid">있음</span></div>
+          <div><span class="k">광택</span><span class="v">유광</span></div>
         </div>
+        <p class="mat-rec"><b>이런 분께</b> — 시간이 지나도 색이 누렇게 변하는 게 가장 싫으신 분. 펄이 들어간 제품과 없는 제품 중에 선택하실 수 있습니다.</p>
       </div>
+
       <div class="mat-card">
-        <div class="mimg"><img src="img/mat-colors.jpg" alt="줄눈 컬러 샘플판" loading="lazy"></div>
-        <div class="mbody">
-          <h3>시공 당일, 샘플판으로 색상 선택</h3>
-          <p>시공 미팅 때 실제 컬러 샘플판을 타일에 직접 대보고 색상을 정합니다. 사진이 아닌 실물로 비교하니 실패가 없습니다.</p>
-          <div class="tagrow"><span class="mtag">실물 샘플판</span><span class="mtag">다양한 컬러</span><span class="mtag">타일 맞춤 추천</span></div>
+        <div class="mat-head"><h3>아스팍톤</h3><span class="mat-origin">국산</span><span class="mat-cure">경화 1일</span></div>
+        <div class="mat-spec">
+          <div><span class="k">황변</span><span class="v mid">있음</span></div>
+          <div><span class="k">수축·팽창</span><span class="v good">없음</span></div>
+          <div><span class="k">광택</span><span class="v">약한 광 · 무펄</span></div>
         </div>
+        <p class="mat-rec"><b>이런 분께</b> — 케라폭시로 하고 싶지만 <b>시공 시간에 여유가 없으신 분</b>. 케라폭시와 느낌은 비슷하면서 하루면 굳습니다.</p>
       </div>
+
+      <div class="mat-card">
+        <div class="mat-head"><h3>케라폭시</h3><span class="mat-origin">이탈리아</span><span class="mat-cure">경화 3일</span></div>
+        <div class="mat-spec">
+          <div><span class="k">황변</span><span class="v mid">있음</span></div>
+          <div><span class="k">수축·팽창</span><span class="v good">없음</span></div>
+          <div><span class="k">광택</span><span class="v">무광 · 무펄</span></div>
+        </div>
+        <p class="mat-rec"><b>이런 분께</b> — <b>무광·무펄의 차분한 마감</b>을 원하시고, 경화까지 3일 정도 여유가 되시는 분.</p>
+      </div>
+
+    </div>
+    <p class="mat-note">※ 경화 기간이란 줄눈이 완전히 굳는 데 걸리는 시간입니다. 이 기간에는 해당 공간에 물을 사용하지 않으셔야 합니다. 입주 일정에 맞춰 알맞은 자재를 추천해 드리니 상담 시 편하게 문의해 주세요.</p>
+    <div class="mat-photos">
+      <div class="mat-photo"><img src="img/mat-aspactone.jpg" alt="아스팍톤 친환경 줄눈제" loading="lazy"><div class="cap">친환경 줄눈제 (아스팍톤)</div></div>
+      <div class="mat-photo"><img src="img/mat-colors.jpg" alt="줄눈 컬러 샘플판" loading="lazy"><div class="cap">시공 당일 실물 샘플판으로 색상 선택</div></div>
     </div>
   </div>
 </section>
@@ -427,7 +463,7 @@ footer b{color:#c2cedb}
     <div class="step"><div class="step-num">2</div><div><h3>계약서 작성</h3><p>시공 범위와 금액을 확정합니다. 계약금은 받지 않습니다 — 100% 후불제입니다.</p></div></div>
     <div class="step"><div class="step-num">3</div><div><h3>해피콜</h3><p>시공 전 일정과 시공 내용을 한 번 더 최종 확인해 드립니다.</p></div></div>
     <div class="step"><div class="step-num">4</div><div><h3>시공 미팅</h3><p>현장을 확인하고 세부 사항을 안내드립니다. 컬러 샘플판으로 줄눈 색상도 이때 함께 정합니다.</p></div></div>
-    <div class="step"><div class="step-num">5</div><div><h3>줄눈 시공 (하루 한 집)</h3><p>전문 장비와 아스팍톤 자재로 밑작업부터 마감까지 본사 시공팀이 진행합니다.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h3>줄눈 시공 (하루 한 집)</h3><p>전문 장비와 선택하신 친환경 자재로 밑작업부터 마감까지 본사 시공팀이 진행합니다.</p></div></div>
     <div class="step"><div class="step-num">6</div><div><h3>고객 확인 후 결제</h3><p>시공 결과를 직접 확인하신 뒤 결제하시면 됩니다. 이후에도 철저한 A/S로 책임집니다.</p></div></div>
   </div>
 </section>
@@ -484,6 +520,8 @@ footer b{color:#c2cedb}
     <details><summary>시공 날짜는 어떻게 정하나요?</summary><div class="a">신축 아파트는 보통 입주 3일 전부터 입주청소·탄성코트·줄눈시공을 할 수 있게 세대를 열어줍니다. 입주 날짜가 정해지면 입주 3일 전 전후로 일정을 맞추시면 됩니다.</div></details>
     <details><summary>시공은 언제 하는 게 좋나요?</summary><div class="a">신축은 백시멘트를 파내는 과정에서 가루가 날리기 때문에 <b>입주청소 전</b>에 줄눈시공을 받는 것이 좋습니다. 구축도 이사 전 시공이 가능하다면 입주청소 전을 권장드리며, 이미 이사하셨거나 거주 중이셔도 시공은 가능합니다.</div></details>
     <details><summary>시공 시간은 얼마나 걸리나요?</summary><div class="a">줄눈 범위와 현장 상황에 따라 다르지만 보통 반나절에서 길게는 하루가 소요됩니다. 시공 당일 범위와 현장 상황을 확인한 뒤 정확한 소요 시간을 안내드립니다.</div></details>
+    <details><summary>시공 후 언제부터 물을 쓸 수 있나요?</summary><div class="a">선택하신 자재에 따라 다릅니다. <b>폴리우레아·아스팍톤은 1일</b>, <b>케라폭시는 3일</b>이면 완전히 굳습니다. 이 기간에는 해당 공간에 물을 사용하지 않으셔야 합니다. 입주 일정이 촉박하시면 하루면 굳는 자재로 추천드리니 상담 시 일정을 알려주세요.</div></details>
+    <details><summary>줄눈 자재는 어떤 걸 쓰나요? 고를 수 있나요?</summary><div class="a">폴리우레아, 아스팍톤, 케라폭시 3가지를 모두 취급하며 <b>모두 친환경 자재</b>입니다. 황변(누렇게 변색)이 없는 것을 원하시면 폴리우레아, 무광·무펄의 차분한 마감을 원하시면 케라폭시, 케라폭시 느낌이면서 하루 만에 굳는 것을 원하시면 아스팍톤을 추천드립니다. 집 상황과 일정을 알려주시면 알맞은 자재를 함께 골라드립니다.</div></details>
     <details><summary>줄눈 색상은 고를 수 있나요?</summary><div class="a">네, 시공 당일 미팅에서 실제 컬러 샘플판을 타일에 직접 대보고 다양한 색상 중에 선택하실 수 있습니다.</div></details>
     <details><summary>구축 아파트도 가능한가요?</summary><div class="a">네 가능합니다. 다만 기존 줄눈의 상태를 확인한 뒤 견적을 안내드립니다.</div></details>
     <details><summary>서울이 아닌데도 와주시나요?</summary><div class="a">서울과 수도권(경기·인천) 전 지역 방문 시공합니다. 인천 본점과 파주점을 운영하고 있어 수도권 어디든 빠르게 방문 가능합니다. 아파트명을 알려주시면 예약 가능 일정을 바로 확인해 드립니다.</div></details>
