@@ -11,13 +11,14 @@
 <meta property="og:site_name" content="꾸미지줄눈">
 <meta property="og:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공 (욕실 1곳 10만원~)">
 <meta property="og:description" content="줄눈시공을 하면서 미처 못 보신 타일 하자까지 찾아드립니다. 반나절~하루 완료 · 안 계셔도 시공 가능 · 무상 A/S 2년 · 계약금 0원 후불제.">
-<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:url" content="https://ggumiji-landing-production.up.railway.app/">
+<meta property="og:image" content="https://ggumiji-landing-production.up.railway.app/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공">
 <meta name="twitter:description" content="욕실 1곳 10만원~ · 계약금 0원 100% 후불제 · 친환경 자재 3종 선택">
-<meta name="twitter:image" content="img/og-image.jpg">
+<meta name="twitter:image" content="https://ggumiji-landing-production.up.railway.app/img/og-image.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d7402f'/%3E%3Cpath d='M16 6L4 16h3v10h7v-6h4v6h7V16h3L16 6z' fill='white'/%3E%3C/svg%3E">
 <!--
@@ -588,8 +589,9 @@ footer b{color:#c2cedb}
     대표: 이기환 | 사업자등록번호: 309-20-54769<br>
     사업장 소재지: 서울특별시 도봉구 도당로13바길 70, 402호(방학동)<br>
     지점: 인천 중구 하늘별빛로65번길 21, 썬앤문타워 603호 / 경기도 파주시 산남로107번길 1<br>
-    대표번호: <span class="nowrap">1600-7201</span> | 상담전화: <span class="nowrap">010-4710-6616</span><br>
-    <a href="https://blog.naver.com/wavezelrabi" style="color:#8698ac">공식 블로그</a><br><br>
+    상담·문의: <span class="nowrap">010-4710-6616</span><br>
+    <a href="https://blog.naver.com/wavezelrabi" style="color:#8698ac">공식 블로그</a>
+    &nbsp;·&nbsp; <a href="/privacy.html" style="color:#8698ac">개인정보처리방침</a><br><br>
     © 2026 꾸미지줄눈. All rights reserved.
   </div>
 </footer>
@@ -612,19 +614,83 @@ footer b{color:#c2cedb}
   }
 })();
 
-// ── 전환 이벤트 추적 (GA4 / 네이버 프리미엄 로그분석 연동 자리) ──
+// ═══════════════════════════════════════════════════════════════
+//  측정 도구 설정 — 아래 3개 ID만 채우면 자동으로 작동합니다
+//  값이 비어 있으면 해당 스크립트는 아예 로드되지 않습니다.
+// ═══════════════════════════════════════════════════════════════
+var TRACKING = {
+  GA4_ID:        '',   // 예: 'G-XXXXXXXXXX'   (GA4 측정 ID)
+  META_PIXEL_ID: '',   // 예: '1234567890123'  (메타 픽셀 ID)
+  NAVER_WCS_ID:  ''    // 예: 'abcd1234efgh'   (네이버 프리미엄 로그분석)
+};
+
+/* ---------- GA4 ---------- */
+(function(){
+  if (!TRACKING.GA4_ID) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + TRACKING.GA4_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', TRACKING.GA4_ID);
+})();
+
+/* ---------- Meta Pixel ---------- */
+(function(f,b,e,v,n,t,s){
+  if(!TRACKING.META_PIXEL_ID) return;
+  if(f.fbq) return; n=f.fbq=function(){ n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+  if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+  t=b.createElement(e); t.async=!0; t.src=v;
+  s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
+  fbq('init', TRACKING.META_PIXEL_ID);
+  fbq('track', 'PageView');
+})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+/* ---------- 네이버 프리미엄 로그분석 ---------- */
+(function(){
+  if (!TRACKING.NAVER_WCS_ID) return;
+  var s = document.createElement('script');
+  s.async = true; s.src = '//wcs.naver.net/wcslog.js';
+  s.onload = function(){
+    if (!window.wcs_add) window.wcs_add = {};
+    window.wcs_add.wa = TRACKING.NAVER_WCS_ID;
+    if (window.wcs) { wcs.inflow(); wcs_do(); }
+  };
+  document.head.appendChild(s);
+})();
+
+// ── 전환 이벤트 추적 ──
+// 카톡/전화 = 문의 전환, 가격표 = 관심, 블로그 = 이탈성 클릭
 document.addEventListener('click', function(e){
   var a = e.target.closest('a');
   if (!a) return;
-  var type = a.classList.contains('track-call') ? 'call_click'
+  var type = a.classList.contains('track-call')  ? 'call_click'
            : a.classList.contains('track-kakao') ? 'kakao_click'
-           : a.classList.contains('track-blog') ? 'blog_click'
+           : a.classList.contains('track-blog')  ? 'blog_click'
            : a.classList.contains('track-price') ? 'price_click' : null;
   if (!type) return;
-  if (typeof gtag === 'function') gtag('event', type, { link_url: a.href });
-  if (window.wcs && window.wcs_add) { // 네이버 로그분석 전환 스크립트 연동 시 활성화
-    var _conv = { type: 'lead' };
-    if (window.wcs_do) wcs_do(_conv);
+
+  // GA4
+  if (typeof gtag === 'function') {
+    gtag('event', type, { link_url: a.href, page_path: location.pathname + location.search });
+  }
+  // Meta Pixel — 문의는 표준 이벤트 Contact 로 보내야 광고 최적화에 쓰입니다
+  if (typeof fbq === 'function') {
+    if (type === 'call_click' || type === 'kakao_click') {
+      fbq('track', 'Contact', { content_name: type });
+    } else if (type === 'price_click') {
+      fbq('track', 'ViewContent', { content_name: '가격표' });
+    } else {
+      fbq('trackCustom', 'BlogClick');
+    }
+  }
+  // 네이버 로그분석 전환
+  if (window.wcs && window.wcs_do && (type === 'call_click' || type === 'kakao_click')) {
+    window.wcs_add = window.wcs_add || {};
+    wcs.inflow();
+    wcs_do({ type: 'lead' });
   }
 });
 </script>
