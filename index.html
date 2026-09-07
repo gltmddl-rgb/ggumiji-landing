@@ -289,7 +289,7 @@ footer b{color:#c2cedb}
 </div>
 
 <!-- TOP FAQ -->
-<section class="topfaq">
+<section class="topfaq" data-sec="01_top_faq">
   <div class="wrap">
     <span class="sec-label">전화 주시기 전에</span>
     <h2>가장 많이 묻는 3가지,<br>먼저 답해드립니다</h2>
@@ -312,7 +312,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- PAIN -->
-<section class="pain">
+<section class="pain" data-sec="02_problem">
   <div class="wrap">
     <span class="sec-label">왜 입주 전에 해야 할까요?</span>
     <h2>새 아파트 기본 줄눈(백시멘트),<br>한두 달이면 이렇게 됩니다</h2>
@@ -326,7 +326,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- BEFORE / AFTER -->
-<section>
+<section data-sec="03_before_after">
   <div class="wrap">
     <span class="sec-label">시공 과정 전후 비교</span>
     <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
@@ -353,7 +353,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- PRICE -->
-<section id="price">
+<section id="price" data-sec="04_price">
   <div class="wrap">
     <span class="sec-label">시공 비용 안내</span>
     <h2>가격, 먼저 공개합니다</h2>
@@ -393,7 +393,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- USP -->
-<section class="usp">
+<section class="usp" data-sec="05_principles">
   <div class="wrap">
     <span class="sec-label">꾸미지줄눈의 원칙</span>
     <h2>같은 줄눈시공이 아닙니다</h2>
@@ -408,7 +408,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- COMPARE -->
-<section class="pain">
+<section class="pain" data-sec="06_compare">
   <div class="wrap">
     <span class="sec-label">한눈에 비교</span>
     <h2>어디에 맡기느냐가<br>줄눈의 수명을 결정합니다</h2>
@@ -429,7 +429,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- MATERIALS -->
-<section>
+<section data-sec="07_materials">
   <div class="wrap">
     <span class="sec-label">사용 자재</span>
     <h2>자재를 고르실 수 있습니다</h2>
@@ -476,7 +476,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- TARGETS -->
-<section>
+<section data-sec="08_targets">
   <div class="wrap">
     <span class="sec-label">시공 대상</span>
     <h2>우리 집은 해당될까?<br>이런 집 모두 시공합니다</h2>
@@ -490,7 +490,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- PROCESS -->
-<section class="process">
+<section class="process" data-sec="09_process">
   <div class="wrap">
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
@@ -505,7 +505,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- CASES -->
-<section>
+<section data-sec="10_cases">
   <div class="wrap">
     <span class="sec-label">시공 사례</span>
     <h2>수도권 신축 단지에서<br>이미 검증됐습니다</h2>
@@ -534,7 +534,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews">
+<section class="reviews" data-sec="11_reviews">
   <div class="wrap">
     <span class="sec-label">고객 후기</span>
     <h2>먼저 시공한 이웃들의 이야기</h2>
@@ -548,7 +548,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- FAQ -->
-<section>
+<section data-sec="12_faq">
   <div class="wrap">
     <span class="sec-label">자주 묻는 질문</span>
     <h2>궁금하신 점을 모았습니다</h2>
@@ -572,7 +572,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- FINAL CTA -->
-<section class="final">
+<section class="final" data-sec="13_final_cta">
   <div class="wrap">
     <h2>아파트명과 평형만 보내주세요</h2>
     <p class="sec-sub">3분이면 견적을 받아보실 수 있습니다.<br>입주 시즌에는 예약이 빠르게 마감됩니다.</p>
@@ -619,7 +619,7 @@ footer b{color:#c2cedb}
 //  값이 비어 있으면 해당 스크립트는 아예 로드되지 않습니다.
 // ═══════════════════════════════════════════════════════════════
 var TRACKING = {
-  GA4_ID:        '',                     // 예: 'G-XXXXXXXXXX'  (GA4 측정 ID — 미입력)
+  GA4_ID:        'G-X5X4F5LKL2',         // GA4 측정 ID — 꾸미지줄눈 웹 스트림
   META_PIXEL_ID: '28734477542804255',    // 메타 데이터 세트(픽셀) — 꾸미지줄눈
   NAVER_WCS_ID:  ''                      // 네이버 프리미엄 로그분석 (검색광고 시작 시)
 };
@@ -661,6 +661,66 @@ var TRACKING = {
   document.head.appendChild(s);
 })();
 
+/* ═══════════════════════════════════════════════════════════════
+   퍼널 계측
+   방문 → 스크롤 → 섹션 열람 → 가격 확인 → FAQ → 문의(전환)
+   모든 이벤트에 apt(단지) 파라미터가 함께 붙습니다.
+   ═══════════════════════════════════════════════════════════════ */
+var _apt = (new URLSearchParams(location.search).get('apt') || '(none)').slice(0,30);
+
+function track(name, params){
+  var p = params || {};
+  p.apt = _apt;
+  if (typeof gtag === 'function') gtag('event', name, p);
+}
+
+/* 1) 스크롤 깊이 — 25/50/75/100% (GA4 기본은 90%만 잡음) */
+(function(){
+  var marks = [25,50,75,100], fired = {};
+  function check(){
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    if (max <= 0) return;
+    var pct = Math.round((window.scrollY / max) * 100);
+    marks.forEach(function(m){
+      if (pct >= m && !fired[m]) { fired[m] = 1; track('scroll_depth', { percent: m }); }
+    });
+  }
+  var t = null;
+  window.addEventListener('scroll', function(){
+    if (t) return;
+    t = setTimeout(function(){ t = null; check(); }, 250);
+  }, { passive: true });
+})();
+
+/* 2) 섹션 열람 — 화면에 절반 이상 들어오면 1회 기록 */
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var sec = en.target.getAttribute('data-sec');
+      io.unobserve(en.target);
+      track('view_section', { section: sec });
+      // 가격표 도달은 퍼널 핵심 지표라 별도 이벤트로도 기록
+      if (sec === '04_price') {
+        track('view_price_table', {});
+        if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_name: '가격표 도달' });
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('section[data-sec]').forEach(function(s){ io.observe(s); });
+})();
+
+/* 3) FAQ 펼침 — 어떤 질문이 많은지 = 고객 관심사 */
+document.querySelectorAll('details').forEach(function(d){
+  d.addEventListener('toggle', function(){
+    if (!d.open) return;
+    var q = (d.querySelector('summary') || {}).textContent || '';
+    track('faq_open', { question: q.trim().slice(0, 60) });
+  });
+});
+
 // ── 전환 이벤트 추적 ──
 // 카톡/전화 = 문의 전환, 가격표 = 관심, 블로그 = 이탈성 클릭
 document.addEventListener('click', function(e){
@@ -672,9 +732,17 @@ document.addEventListener('click', function(e){
            : a.classList.contains('track-price') ? 'price_click' : null;
   if (!type) return;
 
+  // 문의 버튼이 페이지 어디에 있던 것인지 (히어로/가격표/최종CTA/하단바)
+  var host = a.closest('section[data-sec]');
+  var placement = a.closest('.sticky-cta') ? 'sticky_bar'
+                : a.closest('.hero')       ? 'hero'
+                : host ? host.getAttribute('data-sec') : 'unknown';
+
   // GA4
-  if (typeof gtag === 'function') {
-    gtag('event', type, { link_url: a.href, page_path: location.pathname + location.search });
+  track(type, { link_url: a.href, placement: placement });
+  // 문의 전환은 단일 이름으로도 한 번 더 (전환 설정을 하나로 묶기 위함)
+  if (type === 'call_click' || type === 'kakao_click') {
+    track('generate_lead', { method: type === 'kakao_click' ? 'kakao' : 'call', placement: placement });
   }
   // Meta Pixel — 문의는 표준 이벤트 Contact 로 보내야 광고 최적화에 쓰입니다
   if (typeof fbq === 'function') {
