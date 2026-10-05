@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="꾸미지줄눈">
 <meta property="og:title" content="꾸미지줄눈 | 서울·수도권 아파트 줄눈시공 (욕실 1곳 10만원~)">
-<meta property="og:description" content="줄눈시공을 하면서 미처 못 보신 타일 하자까지 찾아드립니다. 반나절~하루 완료 · 안 계셔도 시공 가능 · 무상 A/S 2년 · 계약금 0원 후불제.">
+<meta property="og:description" content="줄눈시공을 하면서 미처 못 보신 타일 하자까지 찾아드립니다. 반나절~하루 완료 · 안 계셔도 시공 가능 · A/S 2년 · 계약금 0원 후불제.">
 <meta property="og:url" content="https://ggumiji-landing-production.up.railway.app/">
 <meta property="og:image" content="https://ggumiji-landing-production.up.railway.app/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 <!--
   ═══════════ [남은 교체 항목 — 딱 1개] ═══════════
   ✅ 전화(상담 010-4710-6616), 실가격표(25/35/45), 실후기 4건, 실사진 16장,
-     자재 3종, 6단계 절차, 후불제/본사시공/무상A/S 2년 문구,
+     자재 3종, 6단계 절차, 후불제/본사시공/A/S 2년 문구(무상 표현 제거 완료),
      사업자 정보(모노텍스 디자인 / 309-20-54769 / 이기환) 반영 완료
   ✅ 오픈카톡 https://open.kakao.com/o/sIDWZjKi — 카톡 버튼 4곳
      (히어로/가격/최종CTA/하단바) 연결 완료
@@ -248,6 +248,36 @@ footer b{color:#c2cedb}
   .cta-col .btn{flex:1}
   .mat-cards{grid-template-columns:1fr 1fr}
 }
+
+/* ── 시공 전/후 비교 슬라이더 (히어로) ── */
+.ba-slider{margin:22px 0 20px}
+.bas-stage{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;
+  border-radius:var(--r);background:#0d1826;cursor:ew-resize;
+  touch-action:pan-y;user-select:none;-webkit-user-select:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.bas-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  display:block;pointer-events:none;-webkit-user-drag:none}
+.bas-before{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.bas-tag{position:absolute;top:10px;z-index:3;font-size:12px;font-weight:800;
+  letter-spacing:.02em;padding:5px 11px;border-radius:999px;color:#fff;
+  background:rgba(13,24,38,.72);backdrop-filter:blur(4px);pointer-events:none}
+.bas-tag-l{left:10px}
+.bas-tag-r{right:10px;background:rgba(215,64,47,.86)}
+.bas-handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:44px;
+  transform:translateX(-50%);z-index:4;background:none;border:0;padding:0;
+  cursor:ew-resize;display:flex;align-items:center;justify-content:center}
+.bas-handle:focus-visible{outline:2px solid #fff;outline-offset:-6px;border-radius:10px}
+.bas-line{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;
+  background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.bas-knob{position:relative;width:44px;height:44px;border-radius:50%;
+  background:#fff;color:var(--navy);font-size:15px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;gap:3px;letter-spacing:-1px;
+  box-shadow:0 3px 12px rgba(0,0,0,.35)}
+.bas-hint{margin-top:10px;text-align:center;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.72)}
+.bas-hint.is-done{opacity:.45}
+@media (max-width:420px){ .bas-stage{aspect-ratio:1/1} }
+
 </style>
 </head>
 <body>
@@ -273,6 +303,21 @@ footer b{color:#c2cedb}
     <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
     <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">욕실 1곳 10만원</span>부터</span></h1>
     <p class="hero-price">줄눈시공을 하면서 미처 못 보신<br class="br-m"><strong class="nowrap">타일 하자까지 찾아드립니다</strong></p>
+
+    <!-- 시공 전/후 비교 슬라이더 -->
+    <div class="ba-slider" id="baSlider">
+      <div class="bas-stage" id="basStage">
+        <img class="bas-img" src="img/cu-after.jpg" alt="줄눈 시공 후 — 오염이 스며들지 않는 전용 줄눈제" loading="eager" decoding="async">
+        <img class="bas-img bas-before" src="img/cu-before.jpg" alt="줄눈 시공 전 — 물을 흡수하는 백시멘트" loading="eager" decoding="async">
+        <span class="bas-tag bas-tag-l">백시멘트</span>
+        <span class="bas-tag bas-tag-r">전용 줄눈제</span>
+        <button class="bas-handle" id="basHandle" type="button" role="slider"
+                aria-label="시공 전후 비교" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <span class="bas-line"></span><span class="bas-knob">‹&nbsp;›</span>
+        </button>
+      </div>
+      <p class="bas-hint" id="basHint">↔ 밀어서 줄눈 소재를 비교해보세요</p>
+    </div>
     <div class="cta-col">
       <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/sIDWZjKi" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
       <a class="btn btn-call track-call" href="tel:010-4710-6616">📞 전화 상담 <small class="nowrap">010-4710-6616</small></a>
@@ -282,7 +327,7 @@ footer b{color:#c2cedb}
     <div class="badges">
       <div class="badge"><span class="ico">⏱️</span><span class="tx">반나절~하루<br>완료</span></div>
       <div class="badge"><span class="ico">🔑</span><span class="tx">안 계셔도<br>시공 가능</span></div>
-      <div class="badge"><span class="ico">🛡️</span><span class="tx">무상 A/S<br>2년</span></div>
+      <div class="badge"><span class="ico">🛡️</span><span class="tx">A/S<br>2년</span></div>
       <div class="badge"><span class="ico">💳</span><span class="tx">계약금 0원<br>후불제</span></div>
     </div>
   </div>
@@ -402,7 +447,7 @@ footer b{color:#c2cedb}
     <div class="usp-item"><div class="usp-num">2</div><div><h3>하루 한 집, 본사 직접 시공</h3><p>하청 없이 본사 소속 전문 시공팀이 하루 한 집만 맡아 시간에 쫓기지 않고 책임 시공합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">3</div><div><h3>백시멘트를 깊게 파내는 밑작업</h3><p>겉면만 긁어내는 시공과 달리, 타일 측면까지 깊고 일정하게 제거해 줄눈의 수명을 확보합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">4</div><div><h3>친환경 자재 3종, 골라서 시공</h3><p>폴리우레아·아스팍톤·케라폭시 중 집 상황과 일정에 맞는 자재를 함께 고릅니다. 어떤 자재를 쓰는지 아래에서 그대로 공개합니다.</p></div></div>
-    <div class="usp-item"><div class="usp-num">5</div><div><h3>계약금 0원, 100% 후불제 · 무상 A/S 2년</h3><p>선입금 없이 시공을 먼저 받고, 결과를 직접 확인하신 뒤 결제합니다. 시공 후 2년간 무상 A/S로 책임집니다. (고객 과실, 타일 들뜸·교체, 누수 등 시공 외 사유는 제외)</p></div></div>
+    <div class="usp-item"><div class="usp-num">5</div><div><h3>계약금 0원, 100% 후불제 · A/S 2년</h3><p>선입금 없이 시공을 먼저 받고, 결과를 직접 확인하신 뒤 결제합니다. 시공 후 2년간 A/S로 책임집니다. (고객 과실, 타일 들뜸·교체, 누수 등 시공 외 사유는 제외)</p></div></div>
     <a class="btn-blog track-blog" style="margin-top:24px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 과정 보기</a>
   </div>
 </section>
@@ -420,7 +465,7 @@ footer b{color:#c2cedb}
         <tr><td class="bad">백시멘트 겉면만 긁어냄</td><td class="good">타일 측면까지 깊게 파내는 밑작업</td></tr>
         <tr><td class="bad">자재 종류도 안 알려줌</td><td class="good">친환경 자재 3종 공개 후 함께 선택</td></tr>
         <tr><td class="bad">계약금·예약금 선입금 요구</td><td class="good">계약금 0원, 확인 후 100% 후불제</td></tr>
-        <tr><td class="bad">시공 후 연락 두절</td><td class="good">무상 A/S 2년으로 끝까지 책임</td></tr>
+        <tr><td class="bad">시공 후 연락 두절</td><td class="good">A/S 2년으로 끝까지 책임</td></tr>
         <tr><td class="bad">시공 당일 집에 있어야 함</td><td class="good">안 계셔도 시공 · 색상은 사진으로 확정</td></tr>
         <tr><td class="bad">줄눈만 채우고 끝</td><td class="good">타일 하자까지 찾아서 알려드림</td></tr>
       </tbody>
@@ -500,7 +545,7 @@ footer b{color:#c2cedb}
     <div class="step"><div class="step-num">3</div><div><h3>해피콜</h3><p>시공 전 일정과 시공 내용을 한 번 더 최종 확인해 드립니다.</p></div></div>
     <div class="step"><div class="step-num">4</div><div><h3>시공 미팅</h3><p>현장을 확인하고 세부 사항을 안내드립니다. 컬러 샘플판으로 줄눈 색상도 이때 함께 정합니다.</p></div></div>
     <div class="step"><div class="step-num">5</div><div><h3>줄눈 시공 (하루 한 집)</h3><p>전문 장비와 선택하신 친환경 자재로 밑작업부터 마감까지 본사 시공팀이 진행합니다.</p></div></div>
-    <div class="step"><div class="step-num">6</div><div><h3>고객 확인 후 결제</h3><p>시공 결과를 직접 확인하신 뒤 결제하시면 됩니다. 이후 2년간 무상 A/S로 책임집니다.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div><h3>고객 확인 후 결제</h3><p>시공 결과를 직접 확인하신 뒤 결제하시면 됩니다. 이후 2년간 A/S로 책임집니다.</p></div></div>
   </div>
 </section>
 
@@ -559,7 +604,7 @@ footer b{color:#c2cedb}
     <details><summary>시공 당일 집에 꼭 있어야 하나요?</summary><div class="a">안 계셔도 시공 가능합니다. 위임장을 작성해 주시거나, 잔금을 이미 치르셨다면 세대 비밀번호를 알려주시면 됩니다. 줄눈 색상도 타일 위에 컬러 샘플을 올려 촬영한 사진을 보내드리고, 사진으로 최종 확정하실 수 있습니다.</div></details>
     <details><summary>시공 후에 냄새가 나나요?</summary><div class="a">시공 중에는 자재 특유의 냄새가 납니다. 다만 경화(완전히 굳는 과정)가 끝나면 냄새는 완전히 사라집니다.</div></details>
     <details><summary>하자 보수가 아직 안 끝난 부위가 있는데 시공해도 되나요?</summary><div class="a">신축 아파트 입주 시 자주 있는 상황입니다. 하자가 있는 타일만 제외하고 나머지 부분을 먼저 시공한 뒤, 하자 보수가 완료되면 <b>저희가 한 번 더 방문해 마무리해 드립니다.</b></div></details>
-    <details><summary>A/S 기간은 어떻게 되나요?</summary><div class="a"><b>무상 A/S 2년</b>입니다. 시공 후 경화가 제대로 되지 않거나 줄눈이 부풀어 오르는 등의 문제가 생기면 가능한 빠른 날짜로 방문해 보수해 드립니다. (고객 과실이나 타일 들뜸·교체, 누수 등 시공 외의 사유는 제외됩니다)</div></details>
+    <details><summary>A/S 기간은 어떻게 되나요?</summary><div class="a"><b>A/S 2년</b>입니다. 시공 후 경화가 제대로 되지 않거나 줄눈이 부풀어 오르는 등의 문제가 생기면 가능한 빠른 날짜로 방문해 보수해 드립니다. (고객 과실이나 타일 들뜸·교체, 누수 등 시공 외의 사유는 제외됩니다)</div></details>
     <details><summary>시공 당일에 다른 부위도 추가할 수 있나요?</summary><div class="a">가능합니다. 방문한 팀장님과 상의하시면 현장에서 바로 추가 시공을 진행해 드립니다.</div></details>
     <details><summary>시공된 색상이 샘플보다 진해 보일 수 있나요?</summary><div class="a">네, 그럴 수 있습니다. 특히 <b>바닥 줄눈</b>은 폴리우레아 특성상 줄눈 폭이 얇고, 타일 단차와 그림자의 영향을 받아 샘플로 보셨을 때보다 진해 보일 수 있습니다. 색상을 고르실 때 이 점을 미리 안내해 드리니 상담 시 편하게 말씀해 주세요.</div></details>
     <details><summary>시공 후 언제부터 물을 쓸 수 있나요?</summary><div class="a">선택하신 자재에 따라 다릅니다. <b>폴리우레아·아스팍톤은 1일</b>, <b>케라폭시는 3일</b>이면 완전히 굳습니다. 이 기간에는 해당 공간에 물을 사용하지 않으셔야 합니다. 입주 일정이 촉박하시면 하루면 굳는 자재로 추천드리니 상담 시 일정을 알려주세요.</div></details>
@@ -761,6 +806,67 @@ document.addEventListener('click', function(e){
     wcs_do({ type: 'lead' });
   }
 });
+</script>
+
+<script>
+/* 시공 전/후 비교 슬라이더 */
+(function(){
+  var stage = document.getElementById('basStage');
+  if (!stage) return;
+  var handle = document.getElementById('basHandle');
+  var hint   = document.getElementById('basHint');
+  var used   = false, dragging = false;
+
+  function setPct(p){
+    p = Math.max(0, Math.min(100, p));
+    stage.style.setProperty('--p', p + '%');
+    handle.setAttribute('aria-valuenow', Math.round(p));
+  }
+  function fromEvent(e){
+    var r = stage.getBoundingClientRect();
+    setPct(((e.clientX - r.left) / r.width) * 100);
+  }
+  function markUsed(){
+    if (used) return;
+    used = true;
+    if (hint) hint.classList.add('is-done');
+    if (typeof track === 'function') track('ba_slider_use', { placement: 'hero' });
+  }
+
+  stage.addEventListener('pointerdown', function(e){
+    dragging = true;
+    stage.setPointerCapture && stage.setPointerCapture(e.pointerId);
+    markUsed(); fromEvent(e);
+  });
+  stage.addEventListener('pointermove', function(e){ if (dragging) fromEvent(e); });
+  ['pointerup','pointercancel','pointerleave'].forEach(function(t){
+    stage.addEventListener(t, function(){ dragging = false; });
+  });
+
+  handle.addEventListener('keydown', function(e){
+    var cur = parseFloat(handle.getAttribute('aria-valuenow')) || 50, step = 4;
+    if (e.key === 'ArrowLeft')       { setPct(cur - step); markUsed(); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { setPct(cur + step); markUsed(); e.preventDefault(); }
+    else if (e.key === 'Home')       { setPct(0);  markUsed(); e.preventDefault(); }
+    else if (e.key === 'End')        { setPct(100); markUsed(); e.preventDefault(); }
+  });
+
+  /* 처음 화면에 들어오면 한 번 흔들어 조작 가능함을 알림 */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(en){
+      if (!en[0].isIntersecting || used) return;
+      io.disconnect();
+      var seq = [50,62,38,50], i = 0;
+      var t = setInterval(function(){
+        if (used || i >= seq.length) { clearInterval(t); return; }
+        setPct(seq[i++]);
+      }, 420);
+    }, { threshold: .6 });
+    io.observe(stage);
+  }
+
+  setPct(50);
+})();
 </script>
 </body>
 </html>
