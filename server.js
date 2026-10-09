@@ -10,7 +10,9 @@ const MIME = {
   '.js': 'text/javascript; charset=utf-8',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
   '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
+  '.mp4': 'video/mp4',
 };
+const LONG_CACHE = new Set(['.jpg', '.jpeg', '.png', '.webp', '.mp4']);
 
 http.createServer((req, res) => {
   const urlPath = decodeURIComponent(req.url.split('?')[0]);
@@ -25,7 +27,31 @@ http.createServer((req, res) => {
         res.end(d2);
       });
     }
-    res.writeHead(200, { 'Content-Type': MIME[path.extname(filePath)] || 'application/octet-stream' });
+    const ext = path.extname(filePath);
+    const headers = {
+      'Content-Type': MIME[ext] || 'application/octet-stream',
+      'Accept-Ranges': 'bytes',
+    };
+    if (LONG_CACHE.has(ext)) headers['Cache-Control'] = 'public, max-age=604800';
+
+    // iOS Safari only plays <video> when the server honors byte ranges
+    const range = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+    if (range) {
+      const size = data.length;
+      let start = range[1] === '' ? size - Number(range[2]) : Number(range[1]);
+      let end = range[1] !== '' && range[2] !== '' ? Number(range[2]) : size - 1;
+      end = Math.min(end, size - 1);
+      if (start < 0 || start > end || start >= size) {
+        res.writeHead(416, { 'Content-Range': `bytes */${size}` });
+        return res.end();
+      }
+      headers['Content-Range'] = `bytes ${start}-${end}/${size}`;
+      headers['Content-Length'] = end - start + 1;
+      res.writeHead(206, headers);
+      return res.end(data.subarray(start, end + 1));
+    }
+    headers['Content-Length'] = data.length;
+    res.writeHead(200, headers);
     res.end(data);
   });
 }).listen(PORT, () => console.log(`ggumiji-landing serving on :${PORT}`));

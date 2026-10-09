@@ -77,7 +77,24 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .hd-call{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;border:1.5px solid var(--line);padding:7px 14px;border-radius:24px}
 
 /* ── hero ── */
-.hero{background:linear-gradient(168deg,var(--navy) 0%,var(--navy2) 55%,#28527d 100%);color:#fff;padding:52px 0 44px}
+.hero{background:linear-gradient(180deg,var(--navy) 0,var(--navy) 380px,var(--navy2) 70%,#28527d 100%);color:#fff;padding:0 0 44px}
+.hero-media{position:relative;overflow:hidden;background:#0d1826 url(img/hero-poster.jpg) 50% 45%/cover no-repeat}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block}
+.hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(13,24,38,.38) 0%,rgba(16,30,48,.58) 50%,rgba(22,40,63,.96) 90%,#16283f 100%)}
+.hero-top{position:relative;z-index:1;padding-top:48px;padding-bottom:24px}
+.hero-top .hero-price{margin-bottom:18px}
+.hero-top h1,.hero-top .hero-price{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero-proof{display:inline-flex;align-items:center;gap:8px;margin-top:2px;font-size:13px;font-weight:600;
+  color:#fff;text-decoration:none;background:rgba(13,24,38,.55);border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(6px);padding:8px 13px;border-radius:12px;line-height:1.4}
+.hero-proof b{color:#ffab98}
+.hero-proof .go{opacity:.7;flex:none}
+.hero-body{padding-top:4px}
+@media (min-width:760px){
+  .hero{padding-top:28px}
+  .hero-media{max-width:720px;margin:0 auto;border-radius:18px}
+}
 .hero-apt{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:6px 14px;border-radius:20px;margin-bottom:18px}
 .hero h1{font-size:clamp(22px,7vw,30px);line-height:1.32;letter-spacing:-.025em;font-weight:800;margin-bottom:14px}
 .hero h1 .hl{color:#ffab98}
@@ -213,10 +230,48 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 
 /* ── reviews ── */
 .reviews{background:var(--bg)}
-.rv{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
-.rv .stars{color:#f5b301;font-size:14px;letter-spacing:2px;margin-bottom:6px}
-.rv p{font-size:14px;margin-bottom:8px}
-.rv .who{font-size:12.5px;color:var(--sub)}
+.rv-sum{background:var(--navy);color:#fff;border-radius:18px;padding:22px 20px 20px;margin-bottom:18px}
+.rv-sum-head{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+.rv-sum-head b{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.rv-sum-head span{font-size:14px;color:#a9bdd4;font-weight:600}
+.rv-bars{display:grid;gap:12px}
+.rv-bar .k{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:700;margin-bottom:6px}
+.rv-bar .k em{font-style:normal;color:#a9bdd4;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rv-bar .t{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.rv-bar .t i{display:block;height:100%;width:var(--w);border-radius:inherit;background:#8fb2d6}
+.rv-bar.hot .k{color:#ffab98}
+.rv-bar.hot .t i{background:var(--teal)}
+.rv-sum-note{font-size:12px;color:#8ea6bf;margin-top:14px}
+
+.rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;
+  scroll-snap-type:x mandatory;padding:2px 20px 10px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-card{scroll-snap-align:center;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(22,40,63,.07)}
+.rv-ph{position:relative;aspect-ratio:16/10;background:#e9eef3}
+.rv-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rv-tag{position:absolute;left:10px;top:10px;font-size:11.5px;font-weight:800;color:#fff;
+  background:rgba(13,24,38,.72);backdrop-filter:blur(4px);padding:4px 10px;border-radius:99px}
+.rv-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.rv-theme{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.35}
+.rv-quote{font-size:14px;line-height:1.7;color:var(--ink)}
+.rv-quote mark{background:linear-gradient(transparent 58%,#ffd6cd 58%);color:inherit;font-weight:700}
+.rv-who{font-size:12.5px;color:var(--sub);margin-top:auto;padding-top:4px}
+.rv-dots{display:flex;justify-content:center;gap:6px;margin:4px 0 6px}
+.rv-dots i{width:6px;height:6px;border-radius:50%;background:#cfd8e2;transition:background .2s,width .2s}
+.rv-dots i.on{width:18px;border-radius:99px;background:var(--teal)}
+.rv-photo-note{font-size:11.5px;color:var(--sub);text-align:center;margin-bottom:18px}
+
+.rv-more{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:18px}
+.rv-more summary{font-size:15px}
+.rv-list{list-style:none;padding:0 16px 8px}
+.rv-list li{font-size:13.5px;line-height:1.65;color:var(--ink);padding:12px 0;border-top:1px solid var(--line)}
+.rv-list li span{display:block;font-size:12px;color:var(--sub);margin-top:3px}
+.rv-cta{display:grid;gap:10px}
+@media (min-width:640px){
+  .rv-track{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;margin:0;padding:0 0 4px}
+  .rv-dots{display:none}
+}
 
 /* ── faq ── */
 details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:#fff}
@@ -299,10 +354,17 @@ footer b{color:#c2cedb}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap">
-    <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
-    <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">욕실 1곳 10만원</span>부터</span></h1>
-    <p class="hero-price">줄눈시공을 하면서 미처 못 보신<br class="br-m"><strong class="nowrap">타일 하자까지 찾아드립니다</strong></p>
+  <div class="hero-media">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none"
+           poster="img/hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
+    <div class="wrap hero-top">
+      <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
+      <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">욕실 1곳 10만원</span>부터</span></h1>
+      <p class="hero-price">줄눈시공을 하면서 미처 못 보신<br class="br-m"><strong class="nowrap">타일 하자까지 찾아드립니다</strong></p>
+      <a class="hero-proof" href="#reviews">💬 <span>후기 13건 중 <b>5건</b>이 "하자까지 찾아줬다"</span><span class="go">›</span></a>
+    </div>
+  </div>
+  <div class="wrap hero-body">
 
     <!-- 시공 전/후 비교 슬라이더 -->
     <div class="ba-slider" id="baSlider">
@@ -333,72 +395,8 @@ footer b{color:#c2cedb}
   </div>
 </div>
 
-<!-- TOP FAQ -->
-<section class="topfaq" data-sec="01_top_faq">
-  <div class="wrap">
-    <span class="sec-label">전화 주시기 전에</span>
-    <h2>가장 많이 묻는 3가지,<br>먼저 답해드립니다</h2>
-    <p class="sec-sub">실제 상담에서 제일 많이 나오는 질문입니다.</p>
-    <div class="tq">
-      <div class="tq-item">
-        <div class="q">Q. 시공하는 데 얼마나 걸리나요?</div>
-        <div class="a"><b>반나절에서 하루면 끝납니다.</b> 시공 범위와 현장 상황에 따라 4~12시간 정도 소요됩니다. 하루 한 집만 맡기 때문에 시간에 쫓겨 마감하지 않습니다.</div>
-      </div>
-      <div class="tq-item">
-        <div class="q">Q. 시공 당일 꼭 집에 있어야 하나요?</div>
-        <div class="a"><b>안 계셔도 시공 가능합니다.</b> 위임장을 작성해 주시거나, 잔금을 치르셨다면 세대 비밀번호만 알려주시면 됩니다. 줄눈 색상도 타일에 샘플을 올려 찍은 사진을 보내드리고 확정하실 수 있습니다.</div>
-      </div>
-      <div class="tq-item">
-        <div class="q">Q. 언제 하는 게 가장 좋나요?</div>
-        <div class="a"><b>입주청소 전을 추천드립니다.</b> 백시멘트를 파내는 과정에서 가루가 많이 날리기 때문입니다. 일정상 어려우시면 입주 후에도 시공 가능하지만, 하루 정도 화장실 사용이 어렵고 청소를 다시 하셔야 합니다.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PAIN -->
-<section class="pain" data-sec="02_problem">
-  <div class="wrap">
-    <span class="sec-label">왜 입주 전에 해야 할까요?</span>
-    <h2>새 아파트 기본 줄눈(백시멘트),<br>한두 달이면 이렇게 됩니다</h2>
-    <p class="sec-sub">백시멘트는 물과 오염을 그대로 흡수하는 소재입니다. 입주 전 시공이 가장 좋고, 이미 오염됐다면 기존 줄눈을 제거하고 새로 시공하면 됩니다.</p>
-    <div class="cards">
-      <div class="card"><span class="ico">🦠</span><h3>곰팡이 · 물때</h3><p>백시멘트가 물을 머금어 타일 사이에 붉은 물때와 곰팡이가 번식하기 시작합니다.</p></div>
-      <div class="card"><span class="ico">🧽</span><h3>지워지지 않는 오염</h3><p>현관·주방 줄눈에 스민 얼룩은 솔로 문질러도 원래 색으로 돌아오지 않습니다.</p></div>
-      <div class="card"><span class="ico">💸</span><h3>뒤늦은 보수 비용</h3><p>오염된 뒤에는 제거 공정이 추가되어 비용과 시간이 더 들어갑니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER -->
-<section data-sec="03_before_after">
-  <div class="wrap">
-    <span class="sec-label">시공 과정 전후 비교</span>
-    <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
-    <p class="sec-sub">타일 이음새(줄눈)는 시공 후에도 그대로 보입니다. 달라지는 건 <b>색과 재질</b>입니다 — 물을 흡수해 누렇게 뜨던 백시멘트가, 오염이 스며들지 않는 전용 줄눈제로 바뀝니다.</p>
-    <div class="ba-grid">
-      <div class="ba before"><div class="ph"><img src="img/ba-bath-before.jpg" alt="욕실 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
-      <div class="ba mid"><div class="ph"><img src="img/ba-bath-mid.jpg" alt="욕실 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
-      <div class="ba after"><div class="ph"><img src="img/ba-bath-after.jpg" alt="욕실 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
-    </div>
-    <div class="cu-wrap">
-      <div class="cu-box before"><img src="img/cu-before.jpg" alt="시공 전 백시멘트 줄눈 확대"><div class="cap">시공 전 (백시멘트)</div></div>
-      <div class="cu-arrow">→</div>
-      <div class="cu-box after"><img src="img/cu-after.jpg" alt="시공 후 전용 줄눈제 확대"><div class="cap">시공 후 (전용 줄눈제)</div></div>
-    </div>
-    <p class="cu-callout">🔍 줄눈 확대컷: <b>오염을 흡수하던</b> 백시멘트 줄눈이 → <b>오염이 스며들지 않는</b> 전용 줄눈제로 바뀝니다. 선 자체가 사라지는 게 아니라, 오래 깨끗하게 유지되는 소재로 교체되는 것입니다. (사진은 광택이 있는 자재로 시공한 사례이며, 무광 자재도 선택 가능합니다)</p>
-    <div class="ba-grid">
-      <div class="ba before"><div class="ph"><img src="img/ba-entry-before.jpg" alt="현관 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
-      <div class="ba mid"><div class="ph"><img src="img/ba-entry-mid.jpg" alt="현관 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
-      <div class="ba after"><div class="ph"><img src="img/ba-entry-after.jpg" alt="현관 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
-    </div>
-    <p class="ba-note" style="margin-bottom:14px">※ 실제 시공 사진은 블로그에서 더 많이 확인하실 수 있습니다.</p>
-    <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
-  </div>
-</section>
-
 <!-- PRICE -->
-<section id="price" data-sec="04_price">
+<section id="price" data-sec="01_price">
   <div class="wrap">
     <span class="sec-label">시공 비용 안내</span>
     <h2>가격, 먼저 공개합니다</h2>
@@ -437,8 +435,149 @@ footer b{color:#c2cedb}
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews" id="reviews" data-sec="02_reviews">
+  <div class="wrap">
+    <span class="sec-label">고객 후기</span>
+    <h2>먼저 시공한 이웃들이<br>가장 많이 한 말</h2>
+    <p class="sec-sub">고객님들이 보내주신 후기 13건을 모두 읽고, 자주 나온 이야기를 세어봤습니다.</p>
+
+    <div class="rv-sum">
+      <div class="rv-sum-head"><b>13</b><span>건의 고객 후기 중</span></div>
+      <div class="rv-bars">
+        <div class="rv-bar"><div class="k">"가격이 합리적이에요"<em>9건</em></div><div class="t"><i style="--w:69%"></i></div></div>
+        <div class="rv-bar"><div class="k">"꼼꼼하게 해주셨어요"<em>7건</em></div><div class="t"><i style="--w:54%"></i></div></div>
+        <div class="rv-bar hot"><div class="k">"몰랐던 타일 하자를 찾아주셨어요"<em>5건</em></div><div class="t"><i style="--w:38%"></i></div></div>
+        <div class="rv-bar"><div class="k">"타일에 딱 맞는 색을 골라주셨어요"<em>5건</em></div><div class="t"><i style="--w:38%"></i></div></div>
+      </div>
+      <p class="rv-sum-note">한 후기에 여러 내용이 들어 있으면 각각 셌습니다.</p>
+    </div>
+
+    <div class="rv-track" id="rvTrack">
+      <article class="rv-card">
+        <div class="rv-ph"><img src="img/ba-bath-after.jpg" alt="신축 욕실 줄눈 시공 완료" loading="lazy"><span class="rv-tag">신축 입주 전</span></div>
+        <div class="rv-body">
+          <h3 class="rv-theme">사전점검 때 못 본<br>타일 하자까지</h3>
+          <p class="rv-quote">"신축 아파트 <mark>타일 하자까지 매의 눈으로 찾아주셨어요!</mark> 합리적인 금액으로 꼼꼼하게 시공해주시고, 마감과 뒷정리까지 너무 깨끗해서 기분 좋게 입주합니다."</p>
+          <p class="rv-who">신축 입주 전 시공 고객</p>
+        </div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-ph"><img src="img/g-bath.jpg" alt="욕실 줄눈 시공 사례" loading="lazy"><span class="rv-tag">곰팡이 고민</span></div>
+        <div class="rv-body">
+          <h3 class="rv-theme">10시간 꼬박,<br>끝까지 꼼꼼하게</h3>
+          <p class="rv-quote">"혼자 오셔서 <mark>10시간 꼬박 작업하시는데 진짜 장인이십니다.</mark> 저렴한 견적에 퀄리티는 대박이고 젠다이 서비스도 해주셨어요! 지긋지긋한 곰팡이 안녕~"</p>
+          <p class="rv-who">욕실 곰팡이로 고민하던 고객</p>
+        </div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-ph"><img src="img/ba-entry-after.jpg" alt="현관 줄눈 시공 완료" loading="lazy"><span class="rv-tag">욕실 + 현관</span></div>
+        <div class="rv-body">
+          <h3 class="rv-theme">타일이랑 찰떡인 색,<br>지인에게도 추천</h3>
+          <p class="rv-quote">"가격이 저렴해서 대충 할까 걱정했는데 웬걸, <mark>엄청 꼼꼼히 파내고 채워주셨어요.</mark> 현관 서비스까지! 줄눈 색상도 타일이랑 찰떡이라 지인들에게 이미 추천했습니다."</p>
+          <p class="rv-who">욕실·현관 시공 고객</p>
+        </div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-ph"><img src="img/cu-after.jpg" alt="줄눈 시공 후 확대 사진" loading="lazy"><span class="rv-tag">구축 · 거주 중</span></div>
+        <div class="rv-body">
+          <h3 class="rv-theme">구축 화장실,<br>진작 할 걸 그랬어요</h3>
+          <p class="rv-quote">"구축 화장실이라 청소 스트레스 컸는데 사장님이 7시간 동안 안전하고 꼼꼼하게 시공해주셨어요! <mark>하자도 찾아주시고 가격도 착해서</mark> 진작 할 걸 후회 중입니다. 대만족!"</p>
+          <p class="rv-who">구축 욕실 시공 고객</p>
+        </div>
+      </article>
+    </div>
+    <div class="rv-dots" id="rvDots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    <p class="rv-photo-note">※ 사진은 꾸미지줄눈 실제 시공 현장이며, 후기를 남기신 고객님 댁과 다를 수 있습니다.</p>
+
+    <details class="rv-more">
+      <summary>후기 9건 더 보기</summary>
+      <ul class="rv-list">
+        <li>"신축 입주 전에 줄눈 맡겼어요. 9시에 오셔서 색상도 잘 골라주시고, 7시간이나 엄청 꼼꼼히 해주셨네요. 욕실이 훨씬 고급스러워졌습니다."<span>신축 입주 전 시공 고객</span></li>
+        <li>"다른 곳보다 저렴해서 걱정했는데 사장님 혼자 9시간 땀 흘리며 완벽하게 해주셨네요. 몰랐던 타일 하자도 찾아주시고 서비스까지! 곰팡이 스트레스 싹 사라졌습니다."<span>욕실 시공 고객</span></li>
+        <li>"약속 시간 딱 맞춰 오셔서 색상 추천도 잘해주시고, 못 봤던 하자까지 찾아주셨어요. 추가 시공도 합리적인 가격에 해주시고 마무리 청소까지 완벽! 자신 있게 추천합니다."<span>신축 시공 고객</span></li>
+        <li>"입주 전 줄눈 필수네요! 사장님 혼자 오랫동안 너무 꼼꼼하게 해주셔서 욕실이 훨씬 깔끔해졌어요. 저렴한 가격에 주방 서비스까지 해주시고 친절하셔서 믿음이 갔습니다."<span>신축 입주 전 시공 고객</span></li>
+        <li>"아침 일찍 오셔서 제가 놓친 타일 깨진 곳도 찾아주시고 너무 양심적이세요. 현장 추가 시공도 착한 가격에 해주셨고, 시공 후 화장실이 완전 고급스러워져서 200% 만족합니다."<span>욕실 시공 고객</span></li>
+        <li>"화장실 청소 스트레스 날려주신 부부 사장님 감사해요! 낡은 타일 조심해서 안전하게 작업해주시고 엄청 친절하십니다. 진작 이사 올 때 할 걸 그랬어요. 완전 깔끔합니다."<span>구축 거주 중 시공 고객</span></li>
+        <li>"색상 고민 엄청 했는데 아침 일찍 오셔서 타일에 딱 맞는 색 찾아주셨어요. 시공 엄청 꼼꼼하시고 줄눈 색상까지 너무 만족스럽습니다. 시공 전보다 욕실 퀄리티가 확 살아났습니다."<span>욕실 시공 고객</span></li>
+        <li>"입주 단톡방 추천으로 했는데 역시 퀄리티 대박이네요. 친절한 설명과 꼼꼼한 작업, 타일 맞춤 색상까지 완벽해요. 마감이 너무 깔끔해서 화장실이 고급 호텔 같아졌어요."<span>입주 단톡방 소개 고객</span></li>
+        <li>"구축 화장실 곰팡이 때문에 미치는 줄 알았는데, 사장님이 안전하게 시공해주셔서 고민 해결! 친절하시고 결과물도 너무 깔끔해서 진작 안 한 과거의 나를 후회합니다."<span>구축 거주 중 시공 고객</span></li>
+      </ul>
+    </details>
+
+    <div class="rv-cta">
+      <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/sIDWZjKi" target="_blank" rel="noopener">💬 우리 집도 카톡으로 견적받기</a>
+      <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- TOP FAQ -->
+<section class="topfaq" data-sec="03_top_faq">
+  <div class="wrap">
+    <span class="sec-label">전화 주시기 전에</span>
+    <h2>가장 많이 묻는 3가지,<br>먼저 답해드립니다</h2>
+    <p class="sec-sub">실제 상담에서 제일 많이 나오는 질문입니다.</p>
+    <div class="tq">
+      <div class="tq-item">
+        <div class="q">Q. 시공하는 데 얼마나 걸리나요?</div>
+        <div class="a"><b>반나절에서 하루면 끝납니다.</b> 시공 범위와 현장 상황에 따라 4~12시간 정도 소요됩니다. 하루 한 집만 맡기 때문에 시간에 쫓겨 마감하지 않습니다.</div>
+      </div>
+      <div class="tq-item">
+        <div class="q">Q. 시공 당일 꼭 집에 있어야 하나요?</div>
+        <div class="a"><b>안 계셔도 시공 가능합니다.</b> 위임장을 작성해 주시거나, 잔금을 치르셨다면 세대 비밀번호만 알려주시면 됩니다. 줄눈 색상도 타일에 샘플을 올려 찍은 사진을 보내드리고 확정하실 수 있습니다.</div>
+      </div>
+      <div class="tq-item">
+        <div class="q">Q. 언제 하는 게 가장 좋나요?</div>
+        <div class="a"><b>입주청소 전을 추천드립니다.</b> 백시멘트를 파내는 과정에서 가루가 많이 날리기 때문입니다. 일정상 어려우시면 입주 후에도 시공 가능하지만, 하루 정도 화장실 사용이 어렵고 청소를 다시 하셔야 합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain" data-sec="04_problem">
+  <div class="wrap">
+    <span class="sec-label">왜 입주 전에 해야 할까요?</span>
+    <h2>새 아파트 기본 줄눈(백시멘트),<br>한두 달이면 이렇게 됩니다</h2>
+    <p class="sec-sub">백시멘트는 물과 오염을 그대로 흡수하는 소재입니다. 입주 전 시공이 가장 좋고, 이미 오염됐다면 기존 줄눈을 제거하고 새로 시공하면 됩니다.</p>
+    <div class="cards">
+      <div class="card"><span class="ico">🦠</span><h3>곰팡이 · 물때</h3><p>백시멘트가 물을 머금어 타일 사이에 붉은 물때와 곰팡이가 번식하기 시작합니다.</p></div>
+      <div class="card"><span class="ico">🧽</span><h3>지워지지 않는 오염</h3><p>현관·주방 줄눈에 스민 얼룩은 솔로 문질러도 원래 색으로 돌아오지 않습니다.</p></div>
+      <div class="card"><span class="ico">💸</span><h3>뒤늦은 보수 비용</h3><p>오염된 뒤에는 제거 공정이 추가되어 비용과 시간이 더 들어갑니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section data-sec="05_before_after">
+  <div class="wrap">
+    <span class="sec-label">시공 과정 전후 비교</span>
+    <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
+    <p class="sec-sub">타일 이음새(줄눈)는 시공 후에도 그대로 보입니다. 달라지는 건 <b>색과 재질</b>입니다 — 물을 흡수해 누렇게 뜨던 백시멘트가, 오염이 스며들지 않는 전용 줄눈제로 바뀝니다.</p>
+    <div class="ba-grid">
+      <div class="ba before"><div class="ph"><img src="img/ba-bath-before.jpg" alt="욕실 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
+      <div class="ba mid"><div class="ph"><img src="img/ba-bath-mid.jpg" alt="욕실 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
+      <div class="ba after"><div class="ph"><img src="img/ba-bath-after.jpg" alt="욕실 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
+    </div>
+    <div class="cu-wrap">
+      <div class="cu-box before"><img src="img/cu-before.jpg" alt="시공 전 백시멘트 줄눈 확대"><div class="cap">시공 전 (백시멘트)</div></div>
+      <div class="cu-arrow">→</div>
+      <div class="cu-box after"><img src="img/cu-after.jpg" alt="시공 후 전용 줄눈제 확대"><div class="cap">시공 후 (전용 줄눈제)</div></div>
+    </div>
+    <p class="cu-callout">🔍 줄눈 확대컷: <b>오염을 흡수하던</b> 백시멘트 줄눈이 → <b>오염이 스며들지 않는</b> 전용 줄눈제로 바뀝니다. 선 자체가 사라지는 게 아니라, 오래 깨끗하게 유지되는 소재로 교체되는 것입니다. (사진은 광택이 있는 자재로 시공한 사례이며, 무광 자재도 선택 가능합니다)</p>
+    <div class="ba-grid">
+      <div class="ba before"><div class="ph"><img src="img/ba-entry-before.jpg" alt="현관 줄눈 시공 전" loading="lazy"></div><div class="cap">① 시공 전</div></div>
+      <div class="ba mid"><div class="ph"><img src="img/ba-entry-mid.jpg" alt="현관 백시멘트 제거 밑작업" loading="lazy"></div><div class="cap">② 밑작업</div></div>
+      <div class="ba after"><div class="ph"><img src="img/ba-entry-after.jpg" alt="현관 줄눈 시공 후" loading="lazy"></div><div class="cap">③ 시공 후</div></div>
+    </div>
+    <p class="ba-note" style="margin-bottom:14px">※ 실제 시공 사진은 블로그에서 더 많이 확인하실 수 있습니다.</p>
+    <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+  </div>
+</section>
+
 <!-- USP -->
-<section class="usp" data-sec="05_principles">
+<section class="usp" data-sec="06_principles">
   <div class="wrap">
     <span class="sec-label">꾸미지줄눈의 원칙</span>
     <h2>같은 줄눈시공이 아닙니다</h2>
@@ -453,7 +592,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- COMPARE -->
-<section class="pain" data-sec="06_compare">
+<section class="pain" data-sec="07_compare">
   <div class="wrap">
     <span class="sec-label">한눈에 비교</span>
     <h2>어디에 맡기느냐가<br>줄눈의 수명을 결정합니다</h2>
@@ -474,7 +613,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- MATERIALS -->
-<section data-sec="07_materials">
+<section data-sec="08_materials">
   <div class="wrap">
     <span class="sec-label">사용 자재</span>
     <h2>자재를 고르실 수 있습니다</h2>
@@ -521,7 +660,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- TARGETS -->
-<section data-sec="08_targets">
+<section data-sec="09_targets">
   <div class="wrap">
     <span class="sec-label">시공 대상</span>
     <h2>우리 집은 해당될까?<br>이런 집 모두 시공합니다</h2>
@@ -535,7 +674,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- PROCESS -->
-<section class="process" data-sec="09_process">
+<section class="process" data-sec="10_process">
   <div class="wrap">
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
@@ -550,7 +689,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- CASES -->
-<section data-sec="10_cases">
+<section data-sec="11_cases">
   <div class="wrap">
     <span class="sec-label">시공 사례</span>
     <h2>수도권 신축 단지에서<br>이미 검증됐습니다</h2>
@@ -575,20 +714,6 @@ footer b{color:#c2cedb}
       <span class="chip">+ 수도권 전역</span>
     </div>
     <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews" data-sec="11_reviews">
-  <div class="wrap">
-    <span class="sec-label">고객 후기</span>
-    <h2>먼저 시공한 이웃들의 이야기</h2>
-    <p class="sec-sub">실제 시공 고객님들이 남겨주신 후기입니다.</p>
-    <div class="rv"><div class="stars">★★★★★</div><p>"신축 입주 전에 줄눈 맡겼어요. 9시에 오셔서 색상도 잘 골라주시고, 7시간이나 엄청 꼼꼼히 해주셨네요. 욕실이 훨씬 고급스러워졌습니다."</p><div class="who">신축 입주 전 시공 고객</div></div>
-    <div class="rv"><div class="stars">★★★★★</div><p>"구축 화장실이라 청소 스트레스 컸는데 사장님이 7시간 동안 안전하고 꼼꼼하게 시공해주셨어요! 하자도 찾아주시고 가격도 착해서 진작 할 걸 후회 중입니다. 대만족!"</p><div class="who">구축 욕실 시공 고객</div></div>
-    <div class="rv"><div class="stars">★★★★★</div><p>"약속 시간 딱 맞춰 오셔서 색상 추천도 잘해주시고, 못 봤던 타일 하자까지 찾아주셨어요. 추가 시공도 합리적인 가격에 해주시고 마무리 청소까지 완벽!"</p><div class="who">신축 시공 고객</div></div>
-    <div class="rv"><div class="stars">★★★★★</div><p>"입주 단톡방 추천으로 했는데 역시 퀄리티 대박이네요. 친절한 설명과 꼼꼼한 작업, 타일 맞춤 색상까지 완벽해요. 마감이 너무 깔끔해서 화장실이 고급 호텔 같아졌어요."</p><div class="who">입주 단톡방 소개 고객</div></div>
-    <a class="btn-blog track-blog" style="margin-top:8px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
   </div>
 </section>
 
@@ -748,7 +873,7 @@ function track(name, params){
       io.unobserve(en.target);
       track('view_section', { section: sec });
       // 가격표 도달은 퍼널 핵심 지표라 별도 이벤트로도 기록
-      if (sec === '04_price') {
+      if (sec === '01_price') {
         track('view_price_table', {});
         if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_name: '가격표 도달' });
       }
@@ -866,6 +991,44 @@ document.addEventListener('click', function(e){
   }
 
   setPct(50);
+})();
+
+/* 히어로 시공 영상 — 데이터 절약·저속망·모션 줄이기 설정이면 정지 이미지만 */
+(function(){
+  var v = document.getElementById('heroVideo');
+  if (!v) return;
+  var c = navigator.connection || {};
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (c.saveData || /(^|-)2g$/.test(c.effectiveType || '') || reduce) return;
+  v.muted = true;
+  v.src = 'video/hero.mp4';
+  function play(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+  play();
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){
+      en[0].isIntersecting ? play() : v.pause();
+    }).observe(v);
+  }
+})();
+
+/* 후기 카드 넘김 표시 */
+(function(){
+  var rail = document.getElementById('rvTrack'), dots = document.getElementById('rvDots');
+  if (!rail || !dots) return;
+  var cards = rail.children, marks = dots.children, swiped = false, t = null;
+  rail.addEventListener('scroll', function(){
+    if (t) return;
+    t = setTimeout(function(){
+      t = null;
+      var mid = rail.scrollLeft + rail.clientWidth / 2, best = 0, bd = Infinity;
+      for (var i = 0; i < cards.length; i++) {
+        var d = Math.abs(cards[i].offsetLeft + cards[i].offsetWidth / 2 - mid);
+        if (d < bd) { bd = d; best = i; }
+      }
+      for (var j = 0; j < marks.length; j++) marks[j].classList.toggle('on', j === best);
+      if (!swiped && best > 0) { swiped = true; if (typeof track === 'function') track('review_swipe', {}); }
+    }, 80);
+  }, { passive: true });
 })();
 </script>
 </body>
