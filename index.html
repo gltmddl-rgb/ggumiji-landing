@@ -230,18 +230,34 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 
 /* ── reviews ── */
 .reviews{background:var(--bg)}
-.rv-sum{background:var(--navy);color:#fff;border-radius:18px;padding:22px 20px 20px;margin-bottom:18px}
-.rv-sum-head{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
-.rv-sum-head b{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.rv-sum-head span{font-size:14px;color:#a9bdd4;font-weight:600}
-.rv-bars{display:grid;gap:12px}
-.rv-bar .k{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:700;margin-bottom:6px}
-.rv-bar .k em{font-style:normal;color:#a9bdd4;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
-.rv-bar .t{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
-.rv-bar .t i{display:block;height:100%;width:var(--w);border-radius:inherit;background:#8fb2d6}
-.rv-bar.hot .k{color:#ffab98}
-.rv-bar.hot .t i{background:var(--teal)}
-.rv-sum-note{font-size:12px;color:#8ea6bf;margin-top:14px}
+.rv-wall{background:var(--navy);color:#fff;border-radius:18px;padding:20px 0 16px;margin-bottom:18px;overflow:hidden}
+.rv-wall-head{padding:0 20px 14px}
+.rv-wall-kicker{font-size:13px;font-weight:700;color:#a9bdd4;margin-bottom:10px}
+.rv-keys{display:flex;flex-wrap:wrap;gap:6px}
+.rv-keys span{font-size:13px;font-weight:800;background:rgba(255,255,255,.1);padding:5px 11px;border-radius:99px}
+.rv-keys .hot{background:var(--teal)}
+.rv-marquee{overflow:hidden;padding:4px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.rv-row{display:flex;width:max-content;animation:rvScroll 70s linear infinite}
+.rv-row.rev{animation-direction:reverse;animation-duration:80s}
+.rv-marquee:hover .rv-row,.rv-marquee:active .rv-row{animation-play-state:paused}
+.rv-q{flex:none;margin-right:8px;font-size:14px;font-weight:600;color:#e7eff8;white-space:nowrap;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:9px 14px;border-radius:12px}
+.rv-q::before{content:"“";color:#ffab98;font-weight:800;margin-right:3px}
+.rv-q.hot{background:rgba(215,64,47,.2);border-color:rgba(255,140,120,.7);color:#fff}
+.rv-wall-note{font-size:11.5px;color:#8ea6bf;padding:10px 20px 0}
+@keyframes rvScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .rv-row{animation:none}
+  .rv-marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;padding:4px 20px}
+}
+
+.btn-insta{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;color:#fff;font-size:16px;font-weight:800;
+  padding:15px;border-radius:var(--r);text-decoration:none;
+  background:linear-gradient(100deg,#f58529 0%,#dd2a7b 45%,#8134af 80%,#515bd4 100%)}
+.btn-insta svg{flex:none}
+.rv-cta .btn-insta{margin-top:0}
 
 .rv-track{display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;
   scroll-snap-type:x mandatory;padding:2px 20px 10px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -361,7 +377,7 @@ footer b{color:#c2cedb}
       <span class="hero-apt" id="aptBadge">🏠 신축 입주 전 · 거주 중 · 구축 모두 시공</span>
       <h1 id="heroTitle">아파트 줄눈시공,<br><span class="nowrap"><span class="hl">욕실 1곳 10만원</span>부터</span></h1>
       <p class="hero-price">줄눈시공을 하면서 미처 못 보신<br class="br-m"><strong class="nowrap">타일 하자까지 찾아드립니다</strong></p>
-      <a class="hero-proof" href="#reviews">💬 <span>후기 13건 중 <b>5건</b>이 "하자까지 찾아줬다"</span><span class="go">›</span></a>
+      <a class="hero-proof" href="#reviews">💬 <span>실제 후기 <b>"못 봤던 하자까지 찾아주셨어요"</b></span><span class="go">›</span></a>
     </div>
   </div>
   <div class="wrap hero-body">
@@ -439,18 +455,49 @@ footer b{color:#c2cedb}
 <section class="reviews" id="reviews" data-sec="02_reviews">
   <div class="wrap">
     <span class="sec-label">고객 후기</span>
-    <h2>먼저 시공한 이웃들이<br>가장 많이 한 말</h2>
-    <p class="sec-sub">고객님들이 보내주신 후기 13건을 모두 읽고, 자주 나온 이야기를 세어봤습니다.</p>
+    <h2>먼저 시공한 이웃들이<br>직접 남긴 말</h2>
+    <p class="sec-sub">고객님들이 보내주신 후기를 고치지 않고 그대로 옮겼습니다.</p>
 
-    <div class="rv-sum">
-      <div class="rv-sum-head"><b>13</b><span>건의 고객 후기 중</span></div>
-      <div class="rv-bars">
-        <div class="rv-bar"><div class="k">"가격이 합리적이에요"<em>9건</em></div><div class="t"><i style="--w:69%"></i></div></div>
-        <div class="rv-bar"><div class="k">"꼼꼼하게 해주셨어요"<em>7건</em></div><div class="t"><i style="--w:54%"></i></div></div>
-        <div class="rv-bar hot"><div class="k">"몰랐던 타일 하자를 찾아주셨어요"<em>5건</em></div><div class="t"><i style="--w:38%"></i></div></div>
-        <div class="rv-bar"><div class="k">"타일에 딱 맞는 색을 골라주셨어요"<em>5건</em></div><div class="t"><i style="--w:38%"></i></div></div>
+    <div class="rv-wall">
+      <div class="rv-wall-head">
+        <p class="rv-wall-kicker">후기에 자주 나오는 이야기</p>
+        <div class="rv-keys"><span>#꼼꼼한 시공</span><span>#합리적인 가격</span><span class="hot">#몰랐던 하자 발견</span><span>#타일 맞춤 색상</span></div>
       </div>
-      <p class="rv-sum-note">한 후기에 여러 내용이 들어 있으면 각각 셌습니다.</p>
+      <div class="rv-marquee">
+        <div class="rv-row">
+          <span class="rv-q hot">타일 하자까지 매의 눈으로 찾아주셨어요!</span>
+          <span class="rv-q">진짜 장인이십니다</span>
+          <span class="rv-q">욕실이 훨씬 고급스러워졌습니다</span>
+          <span class="rv-q">곰팡이 스트레스 싹 사라졌습니다</span>
+          <span class="rv-q">지인들에게 이미 추천했습니다</span>
+          <span class="rv-q hot">제가 놓친 타일 깨진 곳도 찾아주시고</span>
+          <span class="rv-q">마감이 너무 깔끔해서 화장실이 고급 호텔 같아졌어요</span>
+          <span class="rv-q">200% 만족합니다</span>
+          <span class="rv-q">약속 시간 딱 맞춰 오셔서</span>
+          <span class="rv-q">역시 퀄리티 대박이네요</span>
+          <span class="rv-q">시공 전보다 욕실 퀄리티가 확 살아났습니다</span>
+          <span class="rv-q">기분 좋게 입주합니다</span>
+          <span class="rv-q">지긋지긋한 곰팡이 안녕~</span>
+        </div>
+      </div>
+      <div class="rv-marquee">
+        <div class="rv-row rev">
+          <span class="rv-q hot">못 봤던 하자까지 찾아주셨어요</span>
+          <span class="rv-q">줄눈 색상도 타일이랑 찰떡</span>
+          <span class="rv-q">엄청 꼼꼼히 파내고 채워주셨어요</span>
+          <span class="rv-q">너무 양심적이세요</span>
+          <span class="rv-q">진작 할 걸 후회 중입니다. 대만족!</span>
+          <span class="rv-q hot">몰랐던 타일 하자도 찾아주시고</span>
+          <span class="rv-q">타일에 딱 맞는 색 찾아주셨어요</span>
+          <span class="rv-q">마무리 청소까지 완벽!</span>
+          <span class="rv-q">친절하셔서 믿음이 갔습니다</span>
+          <span class="rv-q">입주 전 줄눈 필수네요!</span>
+          <span class="rv-q">낡은 타일 조심해서 안전하게 작업해주시고</span>
+          <span class="rv-q">주변에 적극 추천할게요</span>
+          <span class="rv-q">결과물도 너무 깔끔해서</span>
+        </div>
+      </div>
+      <p class="rv-wall-note">모두 고객님 후기 원문에서 그대로 옮긴 문장입니다.</p>
     </div>
 
     <div class="rv-track" id="rvTrack">
@@ -491,7 +538,7 @@ footer b{color:#c2cedb}
     <p class="rv-photo-note">※ 사진은 꾸미지줄눈 실제 시공 현장이며, 후기를 남기신 고객님 댁과 다를 수 있습니다.</p>
 
     <details class="rv-more">
-      <summary>후기 9건 더 보기</summary>
+      <summary>후기 전문 더 보기</summary>
       <ul class="rv-list">
         <li>"신축 입주 전에 줄눈 맡겼어요. 9시에 오셔서 색상도 잘 골라주시고, 7시간이나 엄청 꼼꼼히 해주셨네요. 욕실이 훨씬 고급스러워졌습니다."<span>신축 입주 전 시공 고객</span></li>
         <li>"다른 곳보다 저렴해서 걱정했는데 사장님 혼자 9시간 땀 흘리며 완벽하게 해주셨네요. 몰랐던 타일 하자도 찾아주시고 서비스까지! 곰팡이 스트레스 싹 사라졌습니다."<span>욕실 시공 고객</span></li>
@@ -508,6 +555,7 @@ footer b{color:#c2cedb}
     <div class="rv-cta">
       <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/sIDWZjKi" target="_blank" rel="noopener">💬 우리 집도 카톡으로 견적받기</a>
       <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+      <a class="btn-insta track-insta" href="https://www.instagram.com/kkumage_julnun/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg> 인스타그램에서 시공 사례 보기</a>
     </div>
   </div>
 </section>
@@ -573,6 +621,7 @@ footer b{color:#c2cedb}
     </div>
     <p class="ba-note" style="margin-bottom:14px">※ 실제 시공 사진은 블로그에서 더 많이 확인하실 수 있습니다.</p>
     <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+    <a class="btn-insta track-insta" href="https://www.instagram.com/kkumage_julnun/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg> 인스타그램에서 시공 사례 보기</a>
   </div>
 </section>
 
@@ -588,6 +637,7 @@ footer b{color:#c2cedb}
     <div class="usp-item"><div class="usp-num">4</div><div><h3>친환경 자재 3종, 골라서 시공</h3><p>폴리우레아·아스팍톤·케라폭시 중 집 상황과 일정에 맞는 자재를 함께 고릅니다. 어떤 자재를 쓰는지 아래에서 그대로 공개합니다.</p></div></div>
     <div class="usp-item"><div class="usp-num">5</div><div><h3>계약금 0원, 100% 후불제 · A/S 2년</h3><p>선입금 없이 시공을 먼저 받고, 결과를 직접 확인하신 뒤 결제합니다. 시공 후 2년간 A/S로 책임집니다. (고객 과실, 타일 들뜸·교체, 누수 등 시공 외 사유는 제외)</p></div></div>
     <a class="btn-blog track-blog" style="margin-top:24px" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 과정 보기</a>
+    <a class="btn-insta track-insta" href="https://www.instagram.com/kkumage_julnun/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg> 인스타그램에서 시공 사례 보기</a>
   </div>
 </section>
 
@@ -714,6 +764,7 @@ footer b{color:#c2cedb}
       <span class="chip">+ 수도권 전역</span>
     </div>
     <a class="btn-blog track-blog" href="https://blog.naver.com/wavezelrabi" target="_blank" rel="noopener">N&nbsp; 블로그에서 실제 시공 후기 보기</a>
+    <a class="btn-insta track-insta" href="https://www.instagram.com/kkumage_julnun/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg> 인스타그램에서 시공 사례 보기</a>
   </div>
 </section>
 
@@ -761,6 +812,7 @@ footer b{color:#c2cedb}
     지점: 인천 중구 하늘별빛로65번길 21, 썬앤문타워 603호 / 경기도 파주시 산남로107번길 1<br>
     상담·문의: <span class="nowrap">010-4710-6616</span><br>
     <a href="https://blog.naver.com/wavezelrabi" style="color:#8698ac">공식 블로그</a>
+    &nbsp;·&nbsp; <a href="https://www.instagram.com/kkumage_julnun/" style="color:#8698ac">인스타그램</a>
     &nbsp;·&nbsp; <a href="/privacy.html" style="color:#8698ac">개인정보처리방침</a><br><br>
     © 2026 꾸미지줄눈. All rights reserved.
   </div>
@@ -899,6 +951,7 @@ document.addEventListener('click', function(e){
   var type = a.classList.contains('track-call')  ? 'call_click'
            : a.classList.contains('track-kakao') ? 'kakao_click'
            : a.classList.contains('track-blog')  ? 'blog_click'
+           : a.classList.contains('track-insta') ? 'insta_click'
            : a.classList.contains('track-price') ? 'price_click' : null;
   if (!type) return;
 
@@ -921,7 +974,7 @@ document.addEventListener('click', function(e){
     } else if (type === 'price_click') {
       fbq('track', 'ViewContent', { content_name: '가격표' });
     } else {
-      fbq('trackCustom', 'BlogClick');
+      fbq('trackCustom', type === 'insta_click' ? 'InstaClick' : 'BlogClick');
     }
   }
   // 네이버 로그분석 전환
@@ -1010,6 +1063,15 @@ document.addEventListener('click', function(e){
     }).observe(v);
   }
 })();
+
+/* 후기 문장 흐름 — 같은 줄을 한 번 더 이어 붙여 끊김 없이 순환 */
+document.querySelectorAll('.rv-row').forEach(function(row){
+  Array.prototype.slice.call(row.children).forEach(function(q){
+    var c = q.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    row.appendChild(c);
+  });
+});
 
 /* 후기 카드 넘김 표시 */
 (function(){
