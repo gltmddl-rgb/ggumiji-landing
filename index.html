@@ -204,15 +204,58 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .gallery .g .lb{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(16,28,43,.72));color:#fff;font-size:11.5px;font-weight:700;padding:14px 8px 7px;text-align:center}
 
 /* ── price ── */
-.price-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);font-size:15px}
-.price-table th{background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;padding:12px;text-align:left}
-.price-table td{padding:14px 12px;border-top:1px solid var(--line)}
-.price-table td:last-child{text-align:right;font-weight:800;color:var(--navy)}
-.price-table .from{font-size:12px;color:var(--sub);font-weight:500}
-.pkg{margin-top:12px;background:var(--teal-bg);border:1.5px solid var(--teal);border-radius:var(--r);padding:18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.pkg .t{font-size:15px;font-weight:800;color:var(--teal-d)}
-.pkg .t small{display:block;font-size:12.5px;font-weight:500;color:var(--sub);margin-top:2px}
-.pkg .p{font-size:20px;font-weight:800;color:var(--teal-d)}
+.price-hook{font-size:clamp(27px,8.2vw,36px);line-height:1.25;letter-spacing:-.04em;font-weight:800;margin-bottom:18px}
+.price-hook .hl{color:var(--teal)}
+.price-voices{border-left:3px solid var(--teal);padding:2px 0 2px 14px;margin-bottom:20px}
+.price-voices .lb{display:block;font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.02em;margin-bottom:5px}
+.price-voices q{display:block;font-size:15px;font-weight:700;color:var(--ink);line-height:1.55}
+.price-voices q+q{margin-top:4px}
+.price-story{font-size:15px;color:var(--sub);line-height:1.8;margin-bottom:26px}
+.price-story b{color:var(--ink)}
+
+.price-start{background:var(--navy);color:#fff;border-radius:18px;padding:20px 22px;margin-bottom:12px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.price-start .k{display:block;font-size:12.5px;font-weight:600;color:#a9bdd4;margin-bottom:5px}
+.price-start .what{font-size:18px;font-weight:800;letter-spacing:-.02em}
+.price-start .num{font-size:46px;font-weight:800;letter-spacing:-.045em;line-height:.95;color:#ffab98;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price-start .num small{font-size:17px;color:#fff;margin-left:2px;letter-spacing:-.02em}
+
+.pkgs{display:grid;gap:10px}
+.pk{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:15px 16px;
+  display:grid;grid-template-columns:1fr auto;gap:10px 12px;align-items:end}
+.pk-name{grid-column:1/-1;display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800;color:var(--sub)}
+.pk-badge{font-size:11px;font-weight:800;color:#fff;background:var(--teal);padding:3px 9px;border-radius:99px;white-space:nowrap}
+.pk-parts{display:flex;flex-wrap:wrap;gap:5px}
+.pk-parts span{font-size:12.5px;font-weight:700;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 8px;white-space:nowrap}
+.pk-price{text-align:right}
+.pk-price b{display:block;font-size:27px;font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--navy);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pk-price b small{font-size:14px;margin-left:1px}
+.pk-price em{display:inline-block;margin-top:6px;font-style:normal;font-size:11.5px;font-weight:800;color:var(--teal-d);
+  background:var(--teal-bg);padding:3px 8px;border-radius:6px;white-space:nowrap}
+.pk.best{border-color:var(--teal);background:linear-gradient(180deg,#fff 0%,#fff6f4 100%);box-shadow:0 8px 22px rgba(215,64,47,.13)}
+.pk.best .pk-name,.pk.best .pk-price b{color:var(--teal-d)}
+.pk.best .pk-parts span{background:#fff;border-color:#f3cfc8}
+.pk-note{font-size:11.5px;color:var(--sub);margin-top:8px}
+
+.incl{margin-top:22px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px}
+.incl h3,.addon h3{font-size:16.5px;letter-spacing:-.02em;margin-bottom:12px}
+.incl ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.incl li{display:flex;align-items:flex-start;gap:7px;font-size:13.5px;font-weight:600;line-height:1.45}
+.incl li::before{content:"✓";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--teal);color:#fff;
+  font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+
+.addon{margin-top:24px}
+.addon-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ad{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.ad .n{font-size:13.5px;font-weight:600;color:var(--sub)}
+.ad .p{font-size:17px;font-weight:800;color:var(--navy);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+@media (min-width:640px){
+  .pkgs{grid-template-columns:repeat(3,1fr)}
+  .pk{grid-template-columns:1fr;align-content:space-between}
+  .pk-price{text-align:left}
+  .incl ul,.addon-grid{grid-template-columns:repeat(4,1fr)}
+}
 .price-note{font-size:12.5px;color:var(--sub);margin-top:14px;line-height:1.7}
 .dummy-tag{display:inline-block;font-size:11px;font-weight:700;color:#b0533a;background:#fdf0ec;border:1px solid #f0cfc4;padding:2px 8px;border-radius:10px;vertical-align:2px;margin-left:6px}
 
@@ -415,33 +458,65 @@ footer b{color:#c2cedb}
 <section id="price" data-sec="01_price">
   <div class="wrap">
     <span class="sec-label">시공 비용 안내</span>
-    <h2>가격, 먼저 공개합니다</h2>
-    <p class="sec-sub">전화 걸기 전에 예산부터 확인하세요. 아래 금액은 <b>폴리우레아 기준</b>의 시공 범위별 기준가입니다.</p>
-    <table class="price-table">
-      <thead><tr><th>기본 시공</th><th style="text-align:right">비용</th></tr></thead>
-      <tbody>
-        <tr><td>욕실 바닥 1곳</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>현관 + 욕실 바닥 2곳</td><td><span class="nowrap">25만원</span></td></tr>
-        <tr><td>현관 + 욕실 바닥 2곳 + 샤워부스 벽</td><td><span class="nowrap">35만원</span></td></tr>
-      </tbody>
-    </table>
-    <div class="pkg">
-      <div class="t">현관 + 욕실 바닥 2곳 + 샤워부스 벽 + 욕조 벽<small>가장 많이 선택하시는 구성</small></div>
-      <div class="p nowrap">45만원</div>
+    <h2 class="price-hook">이 가격에<br><span class="hl">이렇게까지</span> 해요?</h2>
+    <div class="price-voices">
+      <span class="lb">실제 고객 후기 중</span>
+      <q>저렴한 견적에 퀄리티는 대박이고</q>
+      <q>저렴한데 한분이 오셔서 7시간이나 엄청 꼼꼼히 해주셨네요</q>
     </div>
-    <table class="price-table" style="margin-top:12px">
-      <thead><tr><th>추가 시공</th><th style="text-align:right">비용</th></tr></thead>
-      <tbody>
-        <tr><td>베란다</td><td><span class="nowrap">5만원~</span></td></tr>
-        <tr><td>거실 펜트리 / 현관 펜트리</td><td><span class="nowrap">각 5만원~</span></td></tr>
-        <tr><td>세탁실</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>아트월</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>주방 벽</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>실리콘 오염방지</td><td><span class="nowrap">10만원~</span></td></tr>
-        <tr><td>욕실 전체 벽</td><td><span class="nowrap">15만원~</span></td></tr>
-        <tr><td>거실</td><td><span class="nowrap">40만원~</span></td></tr>
-      </tbody>
-    </table>
+    <p class="price-story">저희는 아직 이름이 크게 알려진 업체가 아닙니다. 그래서 한 집 한 집이 다음 고객을 데려온다고 생각합니다. <b>가격은 낮게, 시간은 아끼지 않고.</b> 입주 단톡방에서 나오는 "거기 괜찮더라" 한마디가 저희에겐 가장 큰 광고입니다.</p>
+
+    <div class="price-start">
+      <div><span class="k">폴리우레아 기준 시작가</span><span class="what">욕실 바닥 1곳</span></div>
+      <div class="num">10<small>만원~</small></div>
+    </div>
+
+    <div class="pkgs">
+      <div class="pk">
+        <div class="pk-name">기본 구성</div>
+        <div class="pk-parts"><span>현관</span><span>욕실 바닥 ×2</span></div>
+        <div class="pk-price"><b>25<small>만원</small></b><em>부위당 약 8.3만원</em></div>
+      </div>
+      <div class="pk">
+        <div class="pk-name">샤워부스까지</div>
+        <div class="pk-parts"><span>현관</span><span>욕실 바닥 ×2</span><span>샤워부스 벽</span></div>
+        <div class="pk-price"><b>35<small>만원</small></b><em>부위당 약 8.8만원</em></div>
+      </div>
+      <div class="pk best">
+        <div class="pk-name">욕실 풀구성 <span class="pk-badge">가장 많이 선택</span></div>
+        <div class="pk-parts"><span>현관</span><span>욕실 바닥 ×2</span><span>샤워부스 벽</span><span>욕조 벽</span></div>
+        <div class="pk-price"><b>45<small>만원</small></b><em>부위당 9만원</em></div>
+      </div>
+    </div>
+    <p class="pk-note">※ 부위당 금액은 구성 금액을 부위 수로 나눈 참고값입니다.</p>
+
+    <div class="incl">
+      <h3>이 가격에 다 포함됩니다</h3>
+      <ul>
+        <li>기존 백시멘트 깊게 제거</li>
+        <li>마스킹 테이핑</li>
+        <li>실물 샘플로 색상 선택</li>
+        <li>친환경 자재 3종 중 선택</li>
+        <li>타일 하자 점검</li>
+        <li>마무리 뒷정리</li>
+        <li>A/S 2년</li>
+        <li>계약금 0원 · 후불제</li>
+      </ul>
+    </div>
+
+    <div class="addon">
+      <h3>추가 시공</h3>
+      <div class="addon-grid">
+        <div class="ad"><span class="n">베란다</span><span class="p">5만원~</span></div>
+        <div class="ad"><span class="n">거실·현관 펜트리</span><span class="p">각 5만원~</span></div>
+        <div class="ad"><span class="n">세탁실</span><span class="p">10만원~</span></div>
+        <div class="ad"><span class="n">아트월</span><span class="p">10만원~</span></div>
+        <div class="ad"><span class="n">주방 벽</span><span class="p">10만원~</span></div>
+        <div class="ad"><span class="n">실리콘 오염방지</span><span class="p">10만원~</span></div>
+        <div class="ad"><span class="n">욕실 전체 벽</span><span class="p">15만원~</span></div>
+        <div class="ad"><span class="n">거실</span><span class="p">40만원~</span></div>
+      </div>
+    </div>
     <p class="price-note">※ <b>표시 금액은 기준가입니다.</b> 타일 크기·면적·시공 범위·선택하신 자재에 따라 달라지며, 정확한 비용은 상담 후 확정됩니다. 아파트명·평형·시공 부위를 알려주시면 바로 안내드립니다.</p>
     <div class="cta-col" style="margin-top:22px">
       <a class="btn btn-kakao track-kakao" href="https://open.kakao.com/o/sIDWZjKi" target="_blank" rel="noopener">💬 카톡으로 3분 견적받기</a>
