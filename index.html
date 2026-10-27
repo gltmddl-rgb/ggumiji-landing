@@ -279,10 +279,10 @@ footer b{color:#c2cedb}
 @media (max-width:420px){ .bas-stage{aspect-ratio:1/1} }
 
 
-/* ── PC CTA 폭 보정 — 420px 안에서 글자가 줄바꿈되던 문제 ── */
+/* ── PC CTA — 줄바꿈 + 상단 요소와 폭 불일치(좌측 쏠림) 보정 ── */
 @media (min-width:640px){
-  .cta-col{max-width:560px}
-  .btn-ghost{max-width:560px}
+  .cta-col{max-width:none}
+  .btn-ghost{max-width:none}
   .cta-col .btn{white-space:nowrap;font-size:16px;padding:16px 12px}
   .cta-col .btn small{font-size:12.5px}
 }
@@ -379,7 +379,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- BEFORE / AFTER -->
-<section data-sec="03_before_after">
+<section id="before-after" data-sec="03_before_after">
   <div class="wrap">
     <span class="sec-label">시공 과정 전후 비교</span>
     <h2>줄눈 선이 없어지는 게 아니라,<br>오염 안 되는 색으로 바뀝니다</h2>
@@ -543,7 +543,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- PROCESS -->
-<section class="process" data-sec="09_process">
+<section id="process" class="process" data-sec="09_process">
   <div class="wrap">
     <span class="sec-label">진행 과정</span>
     <h2>문의부터 A/S까지, 이렇게 진행됩니다</h2>
@@ -587,7 +587,7 @@ footer b{color:#c2cedb}
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews" data-sec="11_reviews">
+<section id="reviews" class="reviews" data-sec="11_reviews">
   <div class="wrap">
     <span class="sec-label">고객 후기</span>
     <h2>먼저 시공한 이웃들의 이야기</h2>
