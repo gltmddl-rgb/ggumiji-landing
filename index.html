@@ -1067,9 +1067,9 @@ document.addEventListener('click', function(e){
   }
   // 네이버 로그분석 전환
   if (window.wcs && window.wcs_do && (type === 'call_click' || type === 'kakao_click')) {
-    window.wcs_add = window.wcs_add || {};
-    wcs.inflow();
-    wcs_do({ type: 'lead' });
+    var _nasa = {};
+    _nasa.cnv = wcs.cnv(type === 'kakao_click' ? '4' : '5', '0');
+    wcs_do(_nasa);
   }
 });
 </script>
