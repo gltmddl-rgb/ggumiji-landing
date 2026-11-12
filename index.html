@@ -1018,7 +1018,7 @@ function track(name, params){
         if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_name: '가격표 도달' });
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0, rootMargin: '0px 0px -50% 0px' });
   document.querySelectorAll('section[data-sec]').forEach(function(s){ io.observe(s); });
 })();
 
